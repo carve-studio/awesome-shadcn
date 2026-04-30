@@ -5,6 +5,7 @@ This repo is a selection of shadcn resources that we use for our projects.
 ## Table of Contents
 
 - [Official](#official)
+- [Plugins](#plugins)
 - [Components](#components)
   - [Chánh Đại Components](#chánh-đại-components)
   - [Watermelon UI](#watermelon-ui)
@@ -16,6 +17,14 @@ This repo is a selection of shadcn resources that we use for our projects.
 ### [shadcn Project Creator](https://ui.shadcn.com/create)
 
 Use when you want to start a new shadcn project with the official setup flow.
+
+## Plugins
+
+### [Gradient Border](https://gradient-border.floriankiem.com/)
+
+A Tailwind CSS plugin for gradient borders. It is not shadcn per se, but it plays well with shadcn projects because it works in the same Tailwind styling system.
+
+Use when you need gradient borders on cards, buttons, or feature blocks without hand-rolling the CSS each time.
 
 ## Components
 
