@@ -8,6 +8,7 @@ This repo is a selection of shadcn resources that we use for our projects.
 - [Plugins](#plugins)
 - [Components](#components)
   - [Chánh Đại Components](#chánh-đại-components)
+  - [Supabase UI](#supabase-ui)
   - [Watermelon UI](#watermelon-ui)
 - [Loaders](#loaders)
   - [Dot Matrix](#dot-matrix)
@@ -59,6 +60,27 @@ Use when you need polished shadcn-compatible UI pieces with a strong visual fini
 | [TOC Minimap](https://chanhdai.com/components/toc-minimap) | You need a compact reading progress or document navigation aid. |
 | [Twemoji](https://chanhdai.com/components/twemoji) | You want consistent emoji rendering across platforms. |
 | [Work Experience](https://chanhdai.com/components/work-experience-component) | You need a structured timeline for roles, projects, or career history. |
+
+### [Supabase UI](https://supabase.com/ui/docs/getting-started/introduction)
+
+Supabase-powered blocks and components built on the shadcn/ui registry system.
+
+Use when you need ready auth, upload, realtime, or Supabase platform UI for a Next.js app.
+
+| Resource | Use when |
+| --- | --- |
+| [Supabase Client Libraries](https://supabase.com/ui/docs/nextjs/client) | You need a Supabase client setup for a Next.js App Router project. |
+| [Password-Based Auth](https://supabase.com/ui/docs/nextjs/password-based-auth) | You need sign-up, login, password reset, and update password flows. |
+| [Social Auth](https://supabase.com/ui/docs/nextjs/social-auth) | You need OAuth login scaffolding for Supabase Auth. |
+| [Dropzone](https://supabase.com/ui/docs/nextjs/dropzone) | You need drag-and-drop uploads wired for Supabase Storage. |
+| [Current User Avatar](https://supabase.com/ui/docs/nextjs/current-user-avatar) | You need an avatar that reads the current Supabase Auth user. |
+| [Realtime Avatar Stack](https://supabase.com/ui/docs/nextjs/realtime-avatar-stack) | You need to show who is currently present in a room or session. |
+| [Realtime Chat](https://supabase.com/ui/docs/nextjs/realtime-chat) | You need a low-latency room chat using Supabase Realtime. |
+| [Realtime Cursor](https://supabase.com/ui/docs/nextjs/realtime-cursor) | You need shared cursors for a collaborative experience. |
+| [Realtime Monaco](https://supabase.com/ui/docs/nextjs/realtime-monaco) | You need a collaborative code editor backed by Supabase Realtime. |
+| [Infinite Query Hook](https://supabase.com/ui/docs/infinite-query-hook) | You need typed progressive loading for Supabase lists or tables. |
+| [Platform Kit](https://supabase.com/ui/docs/platform/platform-kit) | You need an embedded Supabase manager for database, auth, storage, users, secrets, and logs. |
+| [Agent Skills](https://supabase.com/ui/docs/ai-editors-rules/skills) | You want Supabase project guidance for AI coding agents. |
 
 ### [Watermelon UI](https://ui.watermelon.sh/)
 
