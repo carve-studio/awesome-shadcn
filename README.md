@@ -8,6 +8,7 @@ This repo is a selection of shadcn resources that we use for our projects.
 - [Plugins](#plugins)
 - [Components](#components)
   - [Chánh Đại Components](#chánh-đại-components)
+  - [Fluid Functionalism](#fluid-functionalism)
   - [Supabase UI](#supabase-ui)
   - [Watermelon UI](#watermelon-ui)
 - [Loaders](#loaders)
@@ -60,6 +61,34 @@ Use when you need polished shadcn-compatible UI pieces with a strong visual fini
 | [TOC Minimap](https://chanhdai.com/components/toc-minimap) | You need a compact reading progress or document navigation aid. |
 | [Twemoji](https://chanhdai.com/components/twemoji) | You want consistent emoji rendering across platforms. |
 | [Work Experience](https://chanhdai.com/components/work-experience-component) | You need a structured timeline for roles, projects, or career history. |
+
+### [Fluid Functionalism](https://www.fluidfunctionalism.com/)
+
+Refined shadcn-compatible components built around functional motion, spring physics, and satisfying hover states.
+
+Use when you want interactive controls that feel more responsive without adding decorative motion.
+
+| Resource | Use when |
+| --- | --- |
+| [Accordion](https://www.fluidfunctionalism.com/docs/accordion) | You need expandable content with clear animated state changes. |
+| [Badge](https://www.fluidfunctionalism.com/docs/badge) | You need compact status labels with a more polished feel. |
+| [Button](https://www.fluidfunctionalism.com/docs/button) | You need action buttons with refined hover and press feedback. |
+| [CheckboxGroup](https://www.fluidfunctionalism.com/docs/checkbox-group) | You need multi-select settings with tactile interaction. |
+| [ColorPicker](https://www.fluidfunctionalism.com/docs/color-picker) | You need a theme or color selection control. |
+| [Dialog](https://www.fluidfunctionalism.com/docs/dialog) | You need a modal flow with smooth open and close motion. |
+| [Dropdown](https://www.fluidfunctionalism.com/docs/dropdown) | You need a menu for grouped actions or options. |
+| [InputCopy](https://www.fluidfunctionalism.com/docs/input-copy) | You need a copyable command, token, URL, or install snippet. |
+| [InputGroup](https://www.fluidfunctionalism.com/docs/input-group) | You need related inputs grouped into one compact control. |
+| [RadioGroup](https://www.fluidfunctionalism.com/docs/radio-group) | You need one-choice selection with visible movement between options. |
+| [Select](https://www.fluidfunctionalism.com/docs/select) | You need an option picker for roles, modes, or settings. |
+| [Slider](https://www.fluidfunctionalism.com/docs/slider) | You need a numeric control that feels responsive while dragging. |
+| [Switch](https://www.fluidfunctionalism.com/docs/switch) | You need an on-off setting with clear state feedback. |
+| [Table](https://www.fluidfunctionalism.com/docs/table) | You need a small data table with refined styling. |
+| [Tabs](https://www.fluidfunctionalism.com/docs/tabs) | You need animated tab navigation for dense product views. |
+| [TabsSubtle](https://www.fluidfunctionalism.com/docs/tabs-subtle) | You need quieter tabs for settings, dashboards, or compact panels. |
+| [ThinkingIndicator](https://www.fluidfunctionalism.com/docs/thinking-indicator) | You need an AI or background-work loading indicator. |
+| [ThinkingSteps](https://www.fluidfunctionalism.com/docs/thinking-steps) | You need to show multi-step AI, search, or analysis progress. |
+| [Tooltip](https://www.fluidfunctionalism.com/docs/tooltip) | You need small contextual hints with polished hover behavior. |
 
 ### [Supabase UI](https://supabase.com/ui/docs/getting-started/introduction)
 
