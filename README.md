@@ -11,6 +11,7 @@ This repo is a selection of shadcn resources that we use for our projects.
   - [Fluid Functionalism](#fluid-functionalism)
   - [Magic UI](#magic-ui)
   - [Supabase UI](#supabase-ui)
+  - [Unlumen UI](#unlumen-ui)
   - [Watermelon UI](#watermelon-ui)
 - [Loaders](#loaders)
   - [Dot Matrix](#dot-matrix)
@@ -121,6 +122,42 @@ Use when you need ready auth, upload, realtime, or Supabase platform UI for a Ne
 | [Infinite Query Hook](https://supabase.com/ui/docs/infinite-query-hook) | You need typed progressive loading for Supabase lists or tables. |
 | [Platform Kit](https://supabase.com/ui/docs/platform/platform-kit) | You need an embedded Supabase manager for database, auth, storage, users, secrets, and logs. |
 | [Agent Skills](https://supabase.com/ui/docs/ai-editors-rules/skills) | You want Supabase project guidance for AI coding agents. |
+
+### [Unlumen UI](https://ui.unlumen.com/docs/ui)
+
+Animated React components built with Tailwind CSS and Motion.
+
+Use when you need polished micro-interactions, text effects, or small animated controls for shadcn-style projects.
+
+| Resource | Use when |
+| --- | --- |
+| [Command Menu](https://ui.unlumen.com/docs/ui/unlumen/command-menu) | You need a command palette with animated interaction details. |
+| [Cursor](https://ui.unlumen.com/docs/ui/unlumen/cursor) | You need a custom cursor treatment for an interactive landing page. |
+| [Floating Tooltip](https://ui.unlumen.com/docs/ui/unlumen/floating-tooltip) | You need a tooltip that follows pointer movement. |
+| [Glowing Badge](https://ui.unlumen.com/docs/ui/unlumen/glowing-badge) | You need a status or feature badge with subtle glow. |
+| [Highlight](https://ui.unlumen.com/docs/ui/unlumen/highlight) | You need animated emphasis inside headings or short text. |
+| [Kbd](https://ui.unlumen.com/docs/ui/unlumen/kbd) | You need keyboard shortcut labels for docs or command menus. |
+| [Magnetic Button](https://ui.unlumen.com/docs/ui/unlumen/magnetic-button) | You need a button with pointer-following motion. |
+| [Orbiting Skills](https://ui.unlumen.com/docs/ui/unlumen/orbiting-skills) | You need an animated skills or tools cluster. |
+| [Progressive Blur](https://ui.unlumen.com/docs/ui/unlumen/progressive-blur) | You need a soft blur fade for overflowing content or sticky areas. |
+| [Scramble Text](https://ui.unlumen.com/docs/ui/unlumen/scramble-text) | You need a reveal effect for technical or product text. |
+| [Shimmer Skeleton](https://ui.unlumen.com/docs/ui/unlumen/shimmer-skeleton) | You need a loading placeholder with motion. |
+| [Shimmering Text](https://ui.unlumen.com/docs/ui/unlumen/shimmering-text) | You need animated text emphasis for labels or headings. |
+| [Slider](https://ui.unlumen.com/docs/ui/unlumen/slider) | You need a refined range control. |
+| [Switch](https://ui.unlumen.com/docs/ui/unlumen/switch) | You need an animated on-off control. |
+| [Text Reveal](https://ui.unlumen.com/docs/ui/unlumen/text-reveal) | You need text that reveals as part of a scroll or entrance moment. |
+| [Theme Switch](https://ui.unlumen.com/docs/ui/unlumen/theme-switch) | You need a more expressive light-dark mode toggle. |
+| [Tilt Card](https://ui.unlumen.com/docs/ui/unlumen/tilt-card) | You need a card with hover depth and motion. |
+| [Tilt](https://ui.unlumen.com/docs/ui/unlumen/tilt) | You need a reusable tilt effect for custom content. |
+| [Tooltip Preview](https://ui.unlumen.com/docs/ui/unlumen/tooltip-preview) | You need a tooltip that can preview richer linked content. |
+| [Velocity Highlight](https://ui.unlumen.com/docs/ui/unlumen/velocity-highlight) | You need animated emphasis that reacts to movement or scroll. |
+| [Copy Button](https://ui.unlumen.com/docs/ui/buttons/copy) | You need a compact copy interaction for code, links, or IDs. |
+| [Glow Button](https://ui.unlumen.com/docs/ui/buttons/glow) | You need a call-to-action button with a stronger visual finish. |
+| [Refresh Button](https://ui.unlumen.com/docs/ui/buttons/refresh) | You need a refresh action with clear motion feedback. |
+| [Pixel Background](https://ui.unlumen.com/docs/ui/backgrounds/pixel) | You need a pixel-style animated background. |
+| [Clipped Circle](https://ui.unlumen.com/docs/ui/effects/clipped-circle) | You need a clipped reveal effect for visual emphasis. |
+| [Count Up](https://ui.unlumen.com/docs/ui/effects/count-up) | You need animated numbers for metrics or stats. |
+| [Math Graph](https://ui.unlumen.com/docs/ui/effects/math-graph) | You need a graph-like animated visual for technical content. |
 
 ### [Watermelon UI](https://ui.watermelon.sh/)
 
