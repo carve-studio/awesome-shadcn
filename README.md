@@ -9,6 +9,7 @@ This repo is a selection of shadcn resources that we use for our projects.
 - [Components](#components)
   - [Chánh Đại Components](#chánh-đại-components)
   - [Fluid Functionalism](#fluid-functionalism)
+  - [Magic UI](#magic-ui)
   - [Supabase UI](#supabase-ui)
   - [Watermelon UI](#watermelon-ui)
 - [Loaders](#loaders)
@@ -89,6 +90,16 @@ Use when you want interactive controls that feel more responsive without adding 
 | [ThinkingIndicator](https://www.fluidfunctionalism.com/docs/thinking-indicator) | You need an AI or background-work loading indicator. |
 | [ThinkingSteps](https://www.fluidfunctionalism.com/docs/thinking-steps) | You need to show multi-step AI, search, or analysis progress. |
 | [Tooltip](https://www.fluidfunctionalism.com/docs/tooltip) | You need small contextual hints with polished hover behavior. |
+
+### [Magic UI](https://magicui.design/docs)
+
+Animated shadcn-compatible components, effects, and backgrounds for product and marketing interfaces.
+
+Use when you need a focused visual effect that can be installed through the shadcn registry.
+
+| Resource | Use when |
+| --- | --- |
+| [Progressive Blur](https://magicui.design/docs/components/progressive-blur) | You need a soft edge fade for scrollable content, sticky panels, or media-heavy sections. |
 
 ### [Supabase UI](https://supabase.com/ui/docs/getting-started/introduction)
 
