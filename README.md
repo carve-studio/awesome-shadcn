@@ -73,6 +73,7 @@ Use when you want interactive controls that feel more responsive without adding 
 | Resource | Use when |
 | --- | --- |
 | [Accordion](https://www.fluidfunctionalism.com/docs/accordion) | You need expandable content with clear animated state changes. |
+| [AskUserQuestions](https://www.fluidfunctionalism.com/docs/ask-user-questions) | You need a guided question flow with options, skip, and custom answers. |
 | [Badge](https://www.fluidfunctionalism.com/docs/badge) | You need compact status labels with a more polished feel. |
 | [Button](https://www.fluidfunctionalism.com/docs/button) | You need action buttons with refined hover and press feedback. |
 | [CheckboxGroup](https://www.fluidfunctionalism.com/docs/checkbox-group) | You need multi-select settings with tactile interaction. |
@@ -81,6 +82,7 @@ Use when you want interactive controls that feel more responsive without adding 
 | [Dropdown](https://www.fluidfunctionalism.com/docs/dropdown) | You need a menu for grouped actions or options. |
 | [InputCopy](https://www.fluidfunctionalism.com/docs/input-copy) | You need a copyable command, token, URL, or install snippet. |
 | [InputGroup](https://www.fluidfunctionalism.com/docs/input-group) | You need related inputs grouped into one compact control. |
+| [InputMessage](https://www.fluidfunctionalism.com/docs/input-message) | You need a chat-style message box with send actions and file attachments. |
 | [RadioGroup](https://www.fluidfunctionalism.com/docs/radio-group) | You need one-choice selection with visible movement between options. |
 | [Select](https://www.fluidfunctionalism.com/docs/select) | You need an option picker for roles, modes, or settings. |
 | [Slider](https://www.fluidfunctionalism.com/docs/slider) | You need a numeric control that feels responsive while dragging. |
