@@ -8,6 +8,7 @@ This repo is a selection of shadcn resources that we use for our projects.
 - [Plugins](#plugins)
 - [Components](#components)
   - [Chánh Đại Components](#chánh-đại-components)
+  - [Extend UI](#extend-ui)
   - [Fluid Functionalism](#fluid-functionalism)
   - [Magic UI](#magic-ui)
   - [Supabase UI](#supabase-ui)
@@ -63,6 +64,28 @@ Use when you need polished shadcn-compatible UI pieces with a strong visual fini
 | [TOC Minimap](https://chanhdai.com/components/toc-minimap) | You need a compact reading progress or document navigation aid. |
 | [Twemoji](https://chanhdai.com/components/twemoji) | You want consistent emoji rendering across platforms. |
 | [Work Experience](https://chanhdai.com/components/work-experience-component) | You need a structured timeline for roles, projects, or career history. |
+
+### [Extend UI](https://ui.extend.ai/ui)
+
+Open source document components for agents, internal tools, and user-facing review flows.
+
+Use when you need shadcn-style document viewers, uploads, citations, or signing flows for PDF, DOCX, XLSX, and CSV work.
+
+| Resource | Use when |
+| --- | --- |
+| [PDF Viewer](https://ui.extend.ai/ui/docs/components/pdf-viewer) | You need to preview PDFs inside an app. |
+| [Document Splits](https://ui.extend.ai/ui/docs/components/document-splits) | You need users to review or adjust page groupings. |
+| [XLSX Viewer](https://ui.extend.ai/ui/docs/components/xlsx-viewer) | You need to inspect spreadsheet files without leaving the product. |
+| [File Upload](https://ui.extend.ai/ui/docs/components/file-upload) | You need a clean upload flow for document-heavy products. |
+| [DOCX Viewer](https://ui.extend.ai/ui/docs/components/docx-viewer) | You need to preview Word documents in the browser. |
+| [File Thumbnail](https://ui.extend.ai/ui/docs/components/file-thumbnail) | You need compact previews for uploaded files. |
+| [Schema Builder](https://ui.extend.ai/ui/docs/components/schema-builder) | You need users to define structured extraction schemas. |
+| [Layout Blocks](https://ui.extend.ai/ui/blocks#layout-blocks) | You need ready document-agent layouts. |
+| [Bounding Box Citations](https://ui.extend.ai/ui/blocks#bounding-box-citations) | You need evidence links from extracted data back to the source document. |
+| [Excel Document Splits](https://ui.extend.ai/ui/blocks#excel-document-splits) | You need split-review flows for spreadsheet documents. |
+| [PDF Dropzone](https://ui.extend.ai/ui/blocks#pdf-dropzone) | You need a focused PDF upload and review block. |
+| [DOCX Editor](https://ui.extend.ai/ui/blocks#docx-editor-block) | You need a document editing block for DOCX workflows. |
+| [E-Signature](https://ui.extend.ai/ui/blocks#e-signature) | You need a simple signing flow inside a document product. |
 
 ### [Fluid Functionalism](https://www.fluidfunctionalism.com/)
 
