@@ -11,6 +11,7 @@ This repo is a selection of shadcn resources that we use for our projects.
   - [Extend UI](#extend-ui)
   - [Fluid Functionalism](#fluid-functionalism)
   - [Magic UI](#magic-ui)
+  - [Spell UI](#spell-ui)
   - [Supabase UI](#supabase-ui)
   - [Unlumen UI](#unlumen-ui)
   - [Watermelon UI](#watermelon-ui)
@@ -126,6 +127,48 @@ Use when you need a focused visual effect that can be installed through the shad
 | Resource | Use when |
 | --- | --- |
 | [Progressive Blur](https://magicui.design/docs/components/progressive-blur) | You need a soft edge fade for scrollable content, sticky panels, or media-heavy sections. |
+
+### [Spell UI](https://spell.sh/docs/introduction)
+
+Copy-ready Tailwind CSS components, blocks, and text effects for React marketing interfaces.
+
+Use when you need polished landing-page UI with playful motion and minimal setup.
+
+| Resource | Use when |
+| --- | --- |
+| [Chart](https://spell.sh/docs/chart) | You need an interactive line chart with cursor-focused details. |
+| [Perspective Book](https://spell.sh/docs/perspective-book) | You need a customizable 3D book mockup. |
+| [Badge](https://spell.sh/docs/badge) | You need compact labels with color and size variants. |
+| [Keyboard Shortcuts](https://spell.sh/docs/kbd) | You need platform-aware keyboard shortcut labels. |
+| [Marquee](https://spell.sh/docs/marquee) | You need an infinite scrolling content strip. |
+| [Tweet](https://spell.sh/docs/tweet) | You need a custom-styled Twitter or X post embed. |
+| [Spotify Card](https://spell.sh/docs/spotify-card) | You need a polished Spotify track card. |
+| [Logos Carousel](https://spell.sh/docs/logos-carousel) | You need an animated customer or partner logo showcase. |
+| [QR Code](https://spell.sh/docs/qr-code) | You need a styled QR code generator. |
+| [Fallback Avatar](https://spell.sh/docs/fallback-avatar) | You need deterministic gradient avatars from names. |
+| [Blur Reveal](https://spell.sh/docs/blur-reveal) | You need text to enter with a soft blur reveal. |
+| [Special Text](https://spell.sh/docs/special-text) | You need a text scramble effect. |
+| [Shimmer Text](https://spell.sh/docs/shimmer-text) | You need a moving highlight across text. |
+| [Highlighted Text](https://spell.sh/docs/highlighted-text) | You need an animated marker-style text highlight. |
+| [Slide Up Text](https://spell.sh/docs/slide-up-text) | You need staggered text that slides into view. |
+| [Text Marquee](https://spell.sh/docs/text-marquee) | You need vertically scrolling text. |
+| [Words Stagger](https://spell.sh/docs/words-stagger) | You need a word-by-word entrance animation. |
+| [Signature](https://spell.sh/docs/signature) | You need an animated handwritten signature. |
+| [Randomized Text](https://spell.sh/docs/randomized-text) | You need a randomized character reveal. |
+| [Gradient Wave Text](https://spell.sh/docs/gradient-wave-text) | You need animated gradient text with a wave effect. |
+| [Rich Button](https://spell.sh/docs/rich-button) | You need a strongly styled button with color variants. |
+| [Flow Button](https://spell.sh/docs/flow-button) | You need a button with an animated dashed border. |
+| [Copy Button](https://spell.sh/docs/copy-button) | You need a compact copy action with visual feedback. |
+| [Pop Button](https://spell.sh/docs/pop-button) | You need a playful 3D push-button effect. |
+| [Color Selector](https://spell.sh/docs/color-selector) | You need an interactive color picker. |
+| [Label Input](https://spell.sh/docs/label-input) | You need an input with a floating label or password toggle. |
+| [Animated Checkbox](https://spell.sh/docs/animated-checkbox) | You need a checkbox with spring and strike-through feedback. |
+| [Exploding Input](https://spell.sh/docs/exploding-input) | You need a playful particle effect while typing. |
+| [Spinner](https://spell.sh/docs/spinner) | You need a configurable loading spinner. |
+| [Bars Spinner](https://spell.sh/docs/bars-spinner) | You need a rotating-bars loading indicator. |
+| [Light Rays](https://spell.sh/docs/light-rays) | You need an animated WebGL light-ray background. |
+| [Animated Gradient](https://spell.sh/docs/animated-gradient) | You need a customizable WebGL gradient background. |
+| [Tilt Card](https://spell.sh/docs/tilt-card) | You need a 3D hover card with a spotlight effect. |
 
 ### [Supabase UI](https://supabase.com/ui/docs/getting-started/introduction)
 
