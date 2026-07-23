@@ -11,12 +11,14 @@ This repo is a selection of shadcn resources that we use for our projects.
   - [Extend UI](#extend-ui)
   - [Fluid Functionalism](#fluid-functionalism)
   - [Magic UI](#magic-ui)
+  - [ReUI](#reui)
   - [Spell UI](#spell-ui)
   - [Supabase UI](#supabase-ui)
   - [Unlumen UI](#unlumen-ui)
   - [Watermelon UI](#watermelon-ui)
 - [Loaders](#loaders)
   - [Dot Matrix](#dot-matrix)
+  - [Thinking Orbs](#thinking-orbs)
 
 ## Official
 
@@ -127,6 +129,12 @@ Use when you need a focused visual effect that can be installed through the shad
 | Resource | Use when |
 | --- | --- |
 | [Progressive Blur](https://magicui.design/docs/components/progressive-blur) | You need a soft edge fade for scrollable content, sticky panels, or media-heavy sections. |
+
+### [ReUI](https://reui.io/components)
+
+Copy-ready shadcn components and product patterns for React and Tailwind CSS.
+
+Use when you need production-style tables, filters, calendars, uploads, or dashboard UI beyond shadcn primitives.
 
 ### [Spell UI](https://spell.sh/docs/introduction)
 
@@ -528,3 +536,9 @@ Use when you need local loading states that feel more crafted than a spinner.
 | [Pivot Ray](https://dotmatrix.zzzzshawn.cloud/r/dotm-triangle-19.json) | You need a triangle loader with a rotating searchlight. |
 | [Twin Perimeter](https://dotmatrix.zzzzshawn.cloud/r/dotm-triangle-20.json) | You need a triangle loader with two perimeter chasers. |
 | [All Dot Matrix Loaders](https://dotmatrix.zzzzshawn.cloud/r/all.json) | You want to install every Dot Matrix loader in one step. |
+
+### [Thinking Orbs](https://github.com/Jakubantalik/thinking-orbs)
+
+Dotted, canvas-based loading indicators for AI and agent interfaces.
+
+Use when you need an accessible, theme-aware visual state for thinking, searching, or working.
