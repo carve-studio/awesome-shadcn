@@ -136,6 +136,80 @@ Copy-ready shadcn components and product patterns for React and Tailwind CSS.
 
 Use when you need production-style tables, filters, calendars, uploads, or dashboard UI beyond shadcn primitives.
 
+| Resource | Use when |
+| --- | --- |
+| [Alert](https://reui.io/components/alert) | You need inline success, warning, error, or status feedback. |
+| [Alert Dialog](https://reui.io/components/alert-dialog) | You need confirmation for a destructive or high-impact action. |
+| [Accordion](https://reui.io/components/accordion) | You need expandable FAQ, settings, or help content. |
+| [Aspect Ratio](https://reui.io/components/aspect-ratio) | You need media to keep a consistent responsive ratio. |
+| [Combobox](https://reui.io/components/combobox) | You need a searchable single- or multi-select input. |
+| [Autocomplete](https://reui.io/components/autocomplete) | You need async suggestions while a user types. |
+| [Avatar](https://reui.io/components/avatar) | You need user or team identity markers. |
+| [Badge](https://reui.io/components/badge) | You need status labels, tags, or count chips. |
+| [Breadcrumb](https://reui.io/components/breadcrumb) | You need a clear navigation trail or page hierarchy. |
+| [Button](https://reui.io/components/button) | You need a button with product-ready variants and states. |
+| [Button Group](https://reui.io/components/button-group) | You need grouped toolbar or segmented actions. |
+| [Calendar](https://reui.io/components/calendar) | You need date selection, ranges, or calendar localization. |
+| [Card](https://reui.io/components/card) | You need a reusable container for product or dashboard content. |
+| [Carousel](https://reui.io/components/carousel) | You need a slider for media, cards, or product images. |
+| [Chart](https://reui.io/components/chart) | You need polished charts for an analytics or dashboard view. |
+| [Checkbox](https://reui.io/components/checkbox) | You need a binary or multi-select form control. |
+| [Collapsible](https://reui.io/components/collapsible) | You need content that expands without leaving the page. |
+| [Command](https://reui.io/components/command) | You need a searchable command palette or quick action picker. |
+| [Context Menu](https://reui.io/components/context-menu) | You need right-click actions for files, rows, or canvas content. |
+| [Data Grid](https://reui.io/components/data-grid) | You need a data table with sorting, filters, row actions, or virtualization. |
+| [Date Selector](https://reui.io/components/date-selector) | You need a compact date or date-range selection control. |
+| [Dialog](https://reui.io/components/dialog) | You need a modal, confirmation, or focused overlay flow. |
+| [Drawer](https://reui.io/components/drawer) | You need a slide-over panel, especially for mobile flows. |
+| [Dropdown Menu](https://reui.io/components/dropdown-menu) | You need a compact menu for related actions. |
+| [Empty](https://reui.io/components/empty) | You need a helpful no-data, first-run, or error state. |
+| [Event Calendar](https://reui.io/components/event-calendar) | You need month, week, day, or agenda scheduling views. |
+| [Field](https://reui.io/components/field) | You need labels, descriptions, and validation around form inputs. |
+| [File Upload](https://reui.io/components/file-upload) | You need dropzones, previews, or multi-file upload flows. |
+| [Filters](https://reui.io/components/filters) | You need schema-driven product filters with URL state. |
+| [Frame](https://reui.io/components/frame) | You need an embedded preview, app shell, or device-style frame. |
+| [Gantt](https://reui.io/components/gantt) | You need a project timeline with task dependencies and scheduling. |
+| [Hover Card](https://reui.io/components/hover-card) | You need rich details when a user hovers an item or link. |
+| [Icon Stack](https://reui.io/components/icon-stack) | You need compact layered icon or technology markers. |
+| [Input](https://reui.io/components/input) | You need text entry for a form, search, or authentication flow. |
+| [Input Group](https://reui.io/components/input-group) | You need prefixed, suffixed, or action-adjacent inputs. |
+| [Input OTP](https://reui.io/components/input-otp) | You need one-time passcode entry. |
+| [Item](https://reui.io/components/item) | You need reusable settings, list, or action rows. |
+| [Kanban](https://reui.io/components/kanban) | You need a sortable, drag-and-drop task board. |
+| [Kbd](https://reui.io/components/kbd) | You need keyboard shortcut hints or legends. |
+| [Label](https://reui.io/components/label) | You need an accessible label paired with a form control. |
+| [Menubar](https://reui.io/components/menubar) | You need desktop-style application menus. |
+| [Native Select](https://reui.io/components/native-select) | You need a lightweight, platform-native option picker. |
+| [Navigation Menu](https://reui.io/components/navigation-menu) | You need site navigation, including a mega-menu pattern. |
+| [Number Field](https://reui.io/components/number-field) | You need a numeric input with increment and decrement controls. |
+| [Pagination](https://reui.io/components/pagination) | You need navigation between result or content pages. |
+| [Phone Input](https://reui.io/components/phone-input) | You need international phone-number input. |
+| [Popover](https://reui.io/components/popover) | You need a small contextual panel anchored to a trigger. |
+| [Progress](https://reui.io/components/progress) | You need to show task completion or upload progress. |
+| [Radio Group](https://reui.io/components/radio-group) | You need one choice from a short set of options. |
+| [Rating](https://reui.io/components/rating) | You need a star or icon rating control. |
+| [Resizable](https://reui.io/components/resizable) | You need adjustable panes in a dashboard or editor. |
+| [Scroll Area](https://reui.io/components/scroll-area) | You need contained scrollable content with controlled overflow. |
+| [Scrollspy](https://reui.io/components/scrollspy) | You need navigation that tracks the visible content section. |
+| [Select](https://reui.io/components/select) | You need an accessible list-selection control. |
+| [Separator](https://reui.io/components/separator) | You need a subtle visual division between related content. |
+| [Sheet](https://reui.io/components/sheet) | You need a side panel for secondary tasks or details. |
+| [Skeleton](https://reui.io/components/skeleton) | You need a layout-preserving loading placeholder. |
+| [Slider](https://reui.io/components/slider) | You need a ranged numeric control. |
+| [Sonner](https://reui.io/components/sonner) | You need toast notifications for transient feedback. |
+| [Sortable](https://reui.io/components/sortable) | You need accessible drag-and-drop lists or grids. |
+| [Spinner](https://reui.io/components/spinner) | You need a compact loading indicator. |
+| [Stepper](https://reui.io/components/stepper) | You need a multi-step form, wizard, or onboarding flow. |
+| [Switch](https://reui.io/components/switch) | You need an on-off preference or setting control. |
+| [Table](https://reui.io/components/table) | You need a simple semantic table without data-grid behavior. |
+| [Tabs](https://reui.io/components/tabs) | You need to switch between related content panels. |
+| [Textarea](https://reui.io/components/textarea) | You need multi-line text input. |
+| [Timeline](https://reui.io/components/timeline) | You need activity, deployment, or milestone history. |
+| [Toggle](https://reui.io/components/toggle) | You need a pressed or unpressed formatting/action control. |
+| [Toggle Group](https://reui.io/components/toggle-group) | You need a compact group of selectable toggle buttons. |
+| [Tooltip](https://reui.io/components/tooltip) | You need concise contextual help on hover or focus. |
+| [Tree](https://reui.io/components/tree) | You need an expandable hierarchy or file-style navigation. |
+
 ### [Spell UI](https://spell.sh/docs/introduction)
 
 Copy-ready Tailwind CSS components, blocks, and text effects for React marketing interfaces.
