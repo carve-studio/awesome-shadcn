@@ -11,6 +11,7 @@ This repo is a selection of shadcn resources that we use for our projects.
   - [Extend UI](#extend-ui)
   - [Fluid Functionalism](#fluid-functionalism)
   - [Magic UI](#magic-ui)
+  - [Payload Components](#payload-components)
   - [ReUI](#reui)
   - [Spell UI](#spell-ui)
   - [Supabase UI](#supabase-ui)
@@ -129,6 +130,12 @@ Use when you need a focused visual effect that can be installed through the shad
 | Resource | Use when |
 | --- | --- |
 | [Progressive Blur](https://magicui.design/docs/components/progressive-blur) | You need a soft edge fade for scrollable content, sticky panels, or media-heavy sections. |
+
+### [Payload Components](https://www.payload-components.xyz/)
+
+MIT registry of typed Payload CMS blocks for Payload v3 and Next.js. Components install as reviewable source, and the companion CLI wires the block into the Payload collection and renderer before regenerating types and the admin import map.
+
+Use when you are building a Payload-backed Next.js site and want shadcn-style block installation without manually repeating the Payload integration work.
 
 ### [ReUI](https://reui.io/components)
 
