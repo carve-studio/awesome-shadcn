@@ -7,6 +7,7 @@ This repo is a selection of shadcn resources that we use for our projects.
 - [Official](#official)
 - [Plugins](#plugins)
 - [Components](#components)
+  - [Beautiful UI](#beautiful-ui)
   - [Chánh Đại Components](#chánh-đại-components)
   - [Extend UI](#extend-ui)
   - [Fluid Functionalism](#fluid-functionalism)
@@ -35,6 +36,12 @@ A Tailwind CSS plugin for gradient borders. It is not shadcn per se, but it play
 Use when you need gradient borders on cards, buttons, or feature blocks without hand-rolling the CSS each time.
 
 ## Components
+
+### [Beautiful UI](https://beautiful-ui-five.vercel.app/)
+
+Copy-paste primitives for AI-native interfaces: loading/thinking states, chat composer, approval cards, diff/records/filter tables, insight cards, and more.
+
+Use when you need pre-built UI pieces for agentic or AI-product interfaces like task rows, tool chips, or streaming text.
 
 ### [Chánh Đại Components](https://chanhdai.com/components)
 
