@@ -11,6 +11,7 @@ This repo is a selection of shadcn resources that we use for our projects.
   - [Chánh Đại Components](#chánh-đại-components)
   - [Extend UI](#extend-ui)
   - [Fluid Functionalism](#fluid-functionalism)
+  - [interior.dev](#interiordev)
   - [Magic UI](#magic-ui)
   - [ReUI](#reui)
   - [Spell UI](#spell-ui)
@@ -126,6 +127,69 @@ Use when you want interactive controls that feel more responsive without adding 
 | [ThinkingIndicator](https://www.fluidfunctionalism.com/docs/thinking-indicator) | You need an AI or background-work loading indicator. |
 | [ThinkingSteps](https://www.fluidfunctionalism.com/docs/thinking-steps) | You need to show multi-step AI, search, or analysis progress. |
 | [Tooltip](https://www.fluidfunctionalism.com/docs/tooltip) | You need small contextual hints with polished hover behavior. |
+
+### [interior.dev](https://interior.dev/docs)
+
+Copy-paste micro-interactions organized by what the user is doing (action feedback, input, async, notification, overlay, navigation, scroll, data, gesture, content). Each component locks its layout against shift, keeps animations interruptible, and works with reduced motion.
+
+Use when you need one specific micro-interaction done right instead of hand-rolling its edge cases.
+
+| Resource | Use when |
+| --- | --- |
+| [Accordion](https://interior.dev/docs/accordion) | You need an accordion with height-auto animation done correctly. |
+| [Blur-up Image](https://interior.dev/docs/blur-up-image) | You need images that resolve from a blurred placeholder into the full photo. |
+| [Collapsible Banner](https://interior.dev/docs/collapsible-banner) | You need a banner that collapses to its title or dismisses entirely. |
+| [Command Palette](https://interior.dev/docs/command-palette) | You need a command palette whose results reorder live as you type. |
+| [Context Menu](https://interior.dev/docs/context-menu) | You need a right-click menu that opens from the pointer, not the corner. |
+| [Copy Button](https://interior.dev/docs/copy-button) | You need a copy interaction that locks its width and reverts after a timeout. |
+| [Drawer](https://interior.dev/docs/drawer) | You need a side panel that keeps its scroll position and state. |
+| [Dropdown](https://interior.dev/docs/dropdown) | You need a dropdown menu whose active highlight travels between items. |
+| [Expanding Search](https://interior.dev/docs/expanding-search) | You need a search icon that expands into a focused field. |
+| [Filter Grid](https://interior.dev/docs/filter-grid) | You need a grid that rearranges on filter instead of blinking. |
+| [Floating Label](https://interior.dev/docs/floating-label) | You need form labels that float out of the way instead of disappearing on focus. |
+| [Hide on Scroll](https://interior.dev/docs/hide-on-scroll) | You need a toolbar that hides on scroll down and yields to content. |
+| [Hold to Confirm](https://interior.dev/docs/hold-to-confirm) | You need a hold gesture that guards a destructive action from accidental clicks. |
+| [Icon Morph](https://interior.dev/docs/icon-morph) | You need a play/pause or menu/close icon that morphs between states instead of swapping. |
+| [Inline Validation](https://interior.dev/docs/inline-validation) | You need inline form error messages that don't shove the layout around. |
+| [Lightbox](https://interior.dev/docs/lightbox) | You need an image lightbox that zooms in and returns to its origin on close. |
+| [Like Burst](https://interior.dev/docs/like-burst) | You need an optimistic like/favorite animation that stays correct under rapid taps. |
+| [Live Activity](https://interior.dev/docs/live-activity) | You need a compact, persistent indicator for ongoing system work. |
+| [Load More](https://interior.dev/docs/load-more) | You need infinite-scroll loading that starts before the user hits the bottom. |
+| [Loading Button](https://interior.dev/docs/loading-button) | You need a submit button that shows a loading state without resizing. |
+| [Logo Marquee](https://interior.dev/docs/logo-marquee) | You need a logo marquee that pauses when the user looks at it. |
+| [Long Press](https://interior.dev/docs/long-press) | You need a long-press gesture confirmed by hold time and cancelled by any interruption. |
+| [Modal](https://interior.dev/docs/modal) | You need a modal with backdrop, scroll lock, and focus trap handled correctly. |
+| [New Items Pill](https://interior.dev/docs/new-items-pill) | You need a "new content" pill that appears without stealing the user's scroll position. |
+| [OTP Input](https://interior.dev/docs/otp-input) | You need a one-time-code input with auto-advance, paste, and error recovery. |
+| [Pagination](https://interior.dev/docs/pagination) | You need pagination where the visible window moves without the row jumping. |
+| [Password Strength](https://interior.dev/docs/password-strength) | You need a strength meter that reads segment by segment as the user types. |
+| [Poll Results](https://interior.dev/docs/poll-results) | You need poll or vote result bars where the winner animates in last. |
+| [Popover](https://interior.dev/docs/popover) | You need a popover that knows its trigger origin and flips on collision. |
+| [Presence Avatars](https://interior.dev/docs/presence-avatars) | You need an avatar stack that animates as people join or leave. |
+| [Press Depth](https://interior.dev/docs/press-depth) | You need buttons that visually confirm a press landed. |
+| [Progress Bar](https://interior.dev/docs/progress-bar) | You need a progress bar that moves from indeterminate to determinate cleanly. |
+| [Reading Progress](https://interior.dev/docs/reading-progress) | You need a reading-progress indicator showing how much content is left. |
+| [Reorder List](https://interior.dev/docs/reorder-list) | You need a drag-to-reorder list where the gap itself is the drop target. |
+| [Ripple](https://interior.dev/docs/ripple) | You need pointer-origin touch feedback on tap targets. |
+| [Scroll Spy](https://interior.dev/docs/scroll-spy) | You need navigation that highlights the section actually in view. |
+| [Segmented Control](https://interior.dev/docs/segmented-control) | You need a segmented control where the thumb slides and the label inverts through it. |
+| [Show More](https://interior.dev/docs/show-more) | You need a "show more" toggle that animates height without reflowing text. |
+| [Skeleton Swap](https://interior.dev/docs/skeleton-swap) | You need skeleton loaders that swap to content with zero layout shift. |
+| [Slider Detents](https://interior.dev/docs/slider-detents) | You need a slider with snap points the user can feel. |
+| [Snap Carousel](https://interior.dev/docs/snap-carousel) | You need a carousel where momentum scrolling lands cleanly on a slide. |
+| [Sortable Table](https://interior.dev/docs/sortable-table) | You need a table where rows animate to their new sorted order. |
+| [Sticky Header](https://interior.dev/docs/sticky-header) | You need a header that condenses as the user scrolls down. |
+| [Streaming Text](https://interior.dev/docs/streaming-text) | You need token-by-token streaming text with a caret, like an LLM response. |
+| [Swipe Deck](https://interior.dev/docs/swipe-deck) | You need a swipeable card stack, like a decision deck. |
+| [Tabs](https://interior.dev/docs/tabs) | You need tabs sharing one animated indicator. |
+| [Tag Input](https://interior.dev/docs/tag-input) | You need a tag input where Enter adds and backspace highlights before removing. |
+| [Task Steps](https://interior.dev/docs/task-steps) | You need a step list that narrates ongoing background work. |
+| [Text Reveal](https://interior.dev/docs/text-reveal) | You need text that reveals in reading order. |
+| [Tooltip Group](https://interior.dev/docs/tooltip-group) | You need tooltips that delay once, then show instantly for the rest of the group. |
+| [Tree View](https://interior.dev/docs/tree-view) | You need a tree view whose disclosure works with arrow keys. |
+| [Typing Indicator](https://interior.dev/docs/typing-indicator) | You need a "someone is typing" indicator for chat or collaborative UIs. |
+| [Value Flash](https://interior.dev/docs/value-flash) | You need numbers that flash or highlight when they change. |
+| [Wizard Steps](https://interior.dev/docs/wizard-steps) | You need a multi-step wizard whose transitions know forward from back. |
 
 ### [Magic UI](https://magicui.design/docs)
 
