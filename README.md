@@ -28,17 +28,23 @@ This repo is a selection of shadcn resources that we use for our projects.
 
 ### [shadcn Project Creator](https://ui.shadcn.com/create)
 
+![shadcn Project Creator](assets/banners/shadcn-project-creator.png)
+
 Use when you want to start a new shadcn project with the official setup flow.
 
 ## Plugins
 
 ### [Gradient Border](https://gradient-border.floriankiem.com/)
 
+![Gradient Border](assets/banners/gradient-border.png)
+
 A Tailwind CSS plugin for gradient borders. It is not shadcn per se, but it plays well with shadcn projects because it works in the same Tailwind styling system.
 
 Use when you need gradient borders on cards, buttons, or feature blocks without hand-rolling the CSS each time.
 
 ### [Border Beam](https://beam.jakubantalik.com/)
+
+![Border Beam](assets/banners/border-beam.png)
 
 A lightweight animated glowing border-beam effect for React, with multiple sizes, color variants, and themes.
 
@@ -47,6 +53,8 @@ Use when you want to draw attention to a card, button, or panel with an animated
 ## Components
 
 ### [AICSS](https://www.aicss.dev/#components)
+
+![AICSS](assets/banners/aicss.png)
 
 Free copy-paste components for showing AI agent output in chat interfaces: thinking states, tool calls, streaming text, and structured data.
 
@@ -70,11 +78,15 @@ Use when you need pre-built pieces for an agent's reasoning, tool use, or struct
 
 ### [Beautiful UI](https://beautiful-ui-five.vercel.app/)
 
+![Beautiful UI](assets/banners/beautiful-ui.png)
+
 Copy-paste primitives for AI-native interfaces: loading/thinking states, chat composer, approval cards, diff/records/filter tables, insight cards, and more.
 
 Use when you need pre-built UI pieces for agentic or AI-product interfaces like task rows, tool chips, or streaming text.
 
 ### [Chánh Đại Components](https://chanhdai.com/components)
+
+![Chánh Đại Components](assets/banners/chanh-ai-components.png)
 
 Pixel-perfect, uniquely crafted components and blocks.
 
@@ -108,6 +120,8 @@ Use when you need polished shadcn-compatible UI pieces with a strong visual fini
 
 ### [Extend UI](https://ui.extend.ai/ui)
 
+![Extend UI](assets/banners/extend-ui.png)
+
 Open source document components for agents, internal tools, and user-facing review flows.
 
 Use when you need shadcn-style document viewers, uploads, citations, or signing flows for PDF, DOCX, XLSX, and CSV work.
@@ -129,6 +143,8 @@ Use when you need shadcn-style document viewers, uploads, citations, or signing 
 | [E-Signature](https://ui.extend.ai/ui/blocks#e-signature) | You need a simple signing flow inside a document product. |
 
 ### [Fluid Functionalism](https://www.fluidfunctionalism.com/)
+
+![Fluid Functionalism](assets/banners/fluid-functionalism.png)
 
 Refined shadcn-compatible components built around functional motion, spring physics, and satisfying hover states.
 
@@ -159,6 +175,8 @@ Use when you want interactive controls that feel more responsive without adding 
 | [Tooltip](https://www.fluidfunctionalism.com/docs/tooltip) | You need small contextual hints with polished hover behavior. |
 
 ### [interior.dev](https://interior.dev/docs)
+
+![interior.dev](assets/banners/interior-dev.png)
 
 Copy-paste micro-interactions organized by what the user is doing (action feedback, input, async, notification, overlay, navigation, scroll, data, gesture, content). Each component locks its layout against shift, keeps animations interruptible, and works with reduced motion.
 
@@ -223,6 +241,8 @@ Use when you need one specific micro-interaction done right instead of hand-roll
 
 ### [Magic UI](https://magicui.design/docs)
 
+![Magic UI](assets/banners/magic-ui.png)
+
 Animated shadcn-compatible components, effects, and backgrounds for product and marketing interfaces.
 
 Use when you need a focused visual effect that can be installed through the shadcn registry.
@@ -232,6 +252,8 @@ Use when you need a focused visual effect that can be installed through the shad
 | [Progressive Blur](https://magicui.design/docs/components/progressive-blur) | You need a soft edge fade for scrollable content, sticky panels, or media-heavy sections. |
 
 ### [ReUI](https://reui.io/components)
+
+![ReUI](assets/banners/reui.png)
 
 Copy-ready shadcn components and product patterns for React and Tailwind CSS.
 
@@ -313,6 +335,8 @@ Use when you need production-style tables, filters, calendars, uploads, or dashb
 
 ### [Spell UI](https://spell.sh/docs/introduction)
 
+![Spell UI](assets/banners/spell-ui.png)
+
 Copy-ready Tailwind CSS components, blocks, and text effects for React marketing interfaces.
 
 Use when you need polished landing-page UI with playful motion and minimal setup.
@@ -355,6 +379,8 @@ Use when you need polished landing-page UI with playful motion and minimal setup
 
 ### [Supabase UI](https://supabase.com/ui/docs/getting-started/introduction)
 
+![Supabase UI](assets/banners/supabase-ui.png)
+
 Supabase-powered blocks and components built on the shadcn/ui registry system.
 
 Use when you need ready auth, upload, realtime, or Supabase platform UI for a Next.js app.
@@ -376,11 +402,15 @@ Use when you need ready auth, upload, realtime, or Supabase platform UI for a Ne
 
 ### [Transitions.dev](https://transitions.dev/)
 
+![Transitions.dev](assets/banners/transitions-dev.png)
+
 Copy-paste UI transitions for common interface moments: card resize, menu reveals, modal open/close, skeleton loaders, and hover effects.
 
 Use when you need a specific, well-tuned micro-animation instead of hand-tuning spring or easing curves yourself.
 
 ### [Unlumen UI](https://ui.unlumen.com/docs/ui)
+
+![Unlumen UI](assets/banners/unlumen-ui.png)
 
 Animated React components built with Tailwind CSS and Motion.
 
@@ -417,6 +447,8 @@ Use when you need polished micro-interactions, text effects, or small animated c
 | [Math Graph](https://ui.unlumen.com/docs/ui/effects/math-graph) | You need a graph-like animated visual for technical content. |
 
 ### [Watermelon UI](https://ui.watermelon.sh/)
+
+![Watermelon UI](assets/banners/watermelon-ui.png)
 
 React components, dashboards, blocks, and animated UI pieces for shadcn-style projects.
 
@@ -650,6 +682,8 @@ Use when you need a broad registry for product UI, dashboards, or small motion d
 
 ### [Dot Matrix](https://dotmatrix.zzzzshawn.cloud/getting-started/usage)
 
+![Dot Matrix](assets/banners/dot-matrix.png)
+
 Small loader components that install through a custom shadcn registry.
 
 Use when you need local loading states that feel more crafted than a spinner.
@@ -719,6 +753,8 @@ Use when you need local loading states that feel more crafted than a spinner.
 | [All Dot Matrix Loaders](https://dotmatrix.zzzzshawn.cloud/r/all.json) | You want to install every Dot Matrix loader in one step. |
 
 ### [Thinking Orbs](https://orbs.jakubantalik.com/)
+
+![Thinking Orbs](assets/banners/thinking-orbs.png)
 
 Dotted, canvas-based loading indicators for AI and agent interfaces.
 
