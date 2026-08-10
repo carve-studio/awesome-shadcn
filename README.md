@@ -10,6 +10,8 @@ Several registries here overlap on the surface, so every entry carries three lin
 
 Component tables sit inside a collapsed accordion under each entry. Each row names the concrete situation that should trigger the component, so an agent can match a task to a component without opening the docs first.
 
+Adding a resource? Read [CONTRIBUTING.md](CONTRIBUTING.md) first — a banner and a complete component list are required, and the resource has to work without a specific backend or framework behind it.
+
 ## Table of Contents
 
 - [Official](#official)
