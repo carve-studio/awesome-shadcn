@@ -7,6 +7,7 @@ This repo is a selection of shadcn resources that we use for our projects.
 - [Official](#official)
 - [Plugins](#plugins)
 - [Components](#components)
+  - [AICSS](#aicss)
   - [Beautiful UI](#beautiful-ui)
   - [Chánh Đại Components](#chánh-đại-components)
   - [Extend UI](#extend-ui)
@@ -16,6 +17,7 @@ This repo is a selection of shadcn resources that we use for our projects.
   - [ReUI](#reui)
   - [Spell UI](#spell-ui)
   - [Supabase UI](#supabase-ui)
+  - [Transitions.dev](#transitionsdev)
   - [Unlumen UI](#unlumen-ui)
   - [Watermelon UI](#watermelon-ui)
 - [Loaders](#loaders)
@@ -36,7 +38,35 @@ A Tailwind CSS plugin for gradient borders. It is not shadcn per se, but it play
 
 Use when you need gradient borders on cards, buttons, or feature blocks without hand-rolling the CSS each time.
 
+### [Border Beam](https://beam.jakubantalik.com/)
+
+A lightweight animated glowing border-beam effect for React, with multiple sizes, color variants, and themes.
+
+Use when you want to draw attention to a card, button, or panel with an animated border instead of a static one.
+
 ## Components
+
+### [AICSS](https://www.aicss.dev/#components)
+
+Free copy-paste components for showing AI agent output in chat interfaces: thinking states, tool calls, streaming text, and structured data.
+
+Use when you need pre-built pieces for an agent's reasoning, tool use, or structured output inside a conversation UI.
+
+| Resource | Use when |
+| --- | --- |
+| [Thinking State](https://www.aicss.dev/components/thinking-state) | You need a minimal label showing the agent is processing. |
+| [Thinking + Reasoning](https://www.aicss.dev/components/thinking-reasoning) | You need an expandable view of the agent's reasoning steps. |
+| [Web Search](https://www.aicss.dev/components/web-search) | You need to show the agent performing a web search. |
+| [File Diff](https://www.aicss.dev/components/file-diff) | You need to show file changes the agent made. |
+| [Image Generation](https://www.aicss.dev/components/image-generation) | You need a loading/result state for generated images. |
+| [Text Response](https://www.aicss.dev/components/text-response) | You need a plain agent text reply block. |
+| [Streaming Text](https://www.aicss.dev/components/streaming-text) | You need a token-by-token streaming reply effect. |
+| [Inline Citations](https://www.aicss.dev/components/inline-citations) | You need source references inline with agent text. |
+| [Code Block](https://www.aicss.dev/components/code-block) | You need a formatted code output block for agent replies. |
+| [To-do List](https://www.aicss.dev/components/task-list) | You need to show the agent's multi-step task plan. |
+| [Data Table](https://www.aicss.dev/components/data-table) | You need tabular data returned by the agent. |
+| [Comparison Table](https://www.aicss.dev/components/comparison-table) | You need a side-by-side comparison from the agent. |
+| [AI Agent Input](https://www.aicss.dev/components/ai-agent-input) | You need a chat input styled for agent conversations. |
 
 ### [Beautiful UI](https://beautiful-ui-five.vercel.app/)
 
@@ -343,6 +373,12 @@ Use when you need ready auth, upload, realtime, or Supabase platform UI for a Ne
 | [Infinite Query Hook](https://supabase.com/ui/docs/infinite-query-hook) | You need typed progressive loading for Supabase lists or tables. |
 | [Platform Kit](https://supabase.com/ui/docs/platform/platform-kit) | You need an embedded Supabase manager for database, auth, storage, users, secrets, and logs. |
 | [Agent Skills](https://supabase.com/ui/docs/ai-editors-rules/skills) | You want Supabase project guidance for AI coding agents. |
+
+### [Transitions.dev](https://transitions.dev/)
+
+Copy-paste UI transitions for common interface moments: card resize, menu reveals, modal open/close, skeleton loaders, and hover effects.
+
+Use when you need a specific, well-tuned micro-animation instead of hand-tuning spring or easing curves yourself.
 
 ### [Unlumen UI](https://ui.unlumen.com/docs/ui)
 
@@ -682,7 +718,7 @@ Use when you need local loading states that feel more crafted than a spinner.
 | [Twin Perimeter](https://dotmatrix.zzzzshawn.cloud/r/dotm-triangle-20.json) | You need a triangle loader with two perimeter chasers. |
 | [All Dot Matrix Loaders](https://dotmatrix.zzzzshawn.cloud/r/all.json) | You want to install every Dot Matrix loader in one step. |
 
-### [Thinking Orbs](https://github.com/Jakubantalik/thinking-orbs)
+### [Thinking Orbs](https://orbs.jakubantalik.com/)
 
 Dotted, canvas-based loading indicators for AI and agent interfaces.
 
