@@ -1,0 +1,64 @@
+# Rate limit per client IP. MCP calls are cheap; story compiles are not.
+limit_req_zone $binary_remote_addr zone=mcp_req:10m rate=60r/m;
+limit_conn_zone $binary_remote_addr zone=mcp_conn:10m;
+
+# Storybook's dev server binds loopback and hardcodes that origin into the
+# preview URLs it hands back over MCP. Rewrite it to the public one.
+map $http_upgrade $connection_upgrade {
+  default upgrade;
+  ''      close;
+}
+
+map $http_x_forwarded_proto $public_scheme {
+  default "https";
+  ""      "https";
+}
+
+server {
+  listen 8080;
+  server_name _;
+
+  # Never let a client re-enable a toolset the server disabled, and never let
+  # one claim to be the Storybook CLI proxy.
+  proxy_set_header X-MCP-Toolsets "";
+  proxy_set_header X-Storybook-MCP-Proxy "";
+
+  # sub_filter cannot rewrite a compressed body.
+  proxy_set_header Accept-Encoding "";
+
+  proxy_set_header Host $host;
+  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+  proxy_set_header X-Forwarded-Proto $public_scheme;
+
+  sub_filter_once off;
+  sub_filter_types application/json text/event-stream application/javascript;
+  sub_filter "http://localhost:${STORYBOOK_PORT}" "${PUBLIC_ORIGIN}";
+
+  # MCP: slow tool calls, streamed responses, no buffering.
+  location /mcp {
+    limit_req zone=mcp_req burst=20 nodelay;
+    limit_conn mcp_conn 4;
+
+    proxy_pass http://storybook:${STORYBOOK_PORT};
+    proxy_http_version 1.1;
+    proxy_buffering off;
+    proxy_cache off;
+    proxy_read_timeout 300s;
+    proxy_send_timeout 300s;
+  }
+
+  # Story rendering. First hit on a story compiles it on demand, hence the
+  # tighter concurrency cap and the long read timeout.
+  location / {
+    limit_req zone=mcp_req burst=40 nodelay;
+    limit_conn mcp_conn 8;
+
+    proxy_pass http://storybook:${STORYBOOK_PORT};
+    proxy_http_version 1.1;
+    proxy_read_timeout 300s;
+
+    # Vite HMR websocket. Harmless to keep; the preview iframe opens one.
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection $connection_upgrade;
+  }
+}
