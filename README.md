@@ -21,6 +21,7 @@ Adding a resource? Read [CONTRIBUTING.md](CONTRIBUTING.md) first — a banner an
   - [Coachmark](#coachmark)
 - [Components](#components)
   - [AICSS](#aicss)
+  - [Arc](#arc)
   - [Beautiful UI](#beautiful-ui)
   - [Chánh Đại Components](#chánh-đại-components)
   - [Extend UI](#extend-ui)
@@ -140,6 +141,146 @@ Free copy-paste blocks for everything an agent renders *inside* the conversation
 | [Data Table](https://www.aicss.dev/components/data-table) | Structured tool output belongs in rows and columns; a markdown table would lose alignment and overflow on mobile. |
 | [Comparison Table](https://www.aicss.dev/components/comparison-table) | The agent's answer is a recommendation between options and the user should be able to check the criteria side by side. |
 | [AI Agent Input](https://www.aicss.dev/components/ai-agent-input) | The composer needs agent affordances — multiline, submit-on-enter, attachments — and a plain `Textarea` would need all of it rebuilt. |
+
+</details>
+
+### [Arc](https://uiarc.dev/docs/introduction)
+
+![Arc](assets/banners/arc.png)
+
+A free, MIT-licensed library of components and blocks with calm spring motion: the standard controls, a dozen animated charts, chat and comment threads, and marketing sections. Every item is plain source styled with CSS modules on Arc's own tokens, not with Tailwind classes.
+
+**Reach for it when** one free library should carry a product end to end (forms, a dashboard with real charts, and the marketing site) with the same restrained motion and a reduced-motion path on every animation.
+
+**Reach elsewhere when** the project styles everything with Tailwind utilities and shadcn's theme variables. [Fluid Functionalism](#fluid-functionalism) is the Tailwind-native animated control set, [ReUI](#reui) covers the data grid and kanban, and [Magic UI](#magic-ui) has the broader marketing effects.
+
+Register the namespace as `"@uiarc": "https://uiarc.dev/r/{name}.json"` in `components.json`. The first install adds `registry/foundation.css`, which sets `--background`, `--foreground`, `--border` and `--accent` on `:root` with Arc's own values and switches dark mode with `data-theme="dark"` instead of the `.dark` class. In an existing shadcn project those names collide: if Arc's file loads last, shadcn hover surfaces that use `--accent` turn near-black. Check the theme after the first install. The registry also ships `arc-skill`, an agent skill for choosing and composing Arc items. Paid [Arc Pro](https://uiarc.dev/pro) charts and app blocks are not listed here.
+
+<details>
+<summary><strong>98 components and 22 blocks</strong></summary>
+
+| Component | Use when |
+| --- | --- |
+| [Button](https://uiarc.dev/components/button) | A standard action whose secondary and ghost states should stay quiet next to the primary one. |
+| [Action Button](https://uiarc.dev/components/action-button) | A toolbar repeats the same small actions all day and full-size buttons would crowd it. |
+| [Split Button](https://uiarc.dev/components/split-button) | One action is the default but two or three close variants ("Save as draft", "Save and close") belong on the same button. |
+| [Dropdown Menu](https://uiarc.dev/components/dropdown-menu) | A trigger opens a short list of actions that do not deserve their own buttons. |
+| [Context Menu](https://uiarc.dev/components/context-menu) | Actions belong to the object under the cursor and should open on right-click, next to it. |
+| [Copy Button](https://uiarc.dev/components/copy-button) | A key, URL, or command is copied and the user needs proof it landed without a toast. |
+| [Drawer](https://uiarc.dev/components/drawer) | Focused work (edit a record, fill a form) should happen beside the page instead of replacing it. |
+| [Theme Switch](https://uiarc.dev/components/theme-switch) | The app has light and dark themes and the toggle itself should animate the change. |
+| [Theme Switch Eclipse](https://uiarc.dev/components/theme-switch-eclipse) | The theme change should sweep across the page like a shadow crossing it. |
+| [Theme Switch Split](https://uiarc.dev/components/theme-switch-split) | The theme change should open from a thin seam in the middle of the screen. |
+| [Theme Switch Rise](https://uiarc.dev/components/theme-switch-rise) | The theme change should rise from the bottom edge into place. |
+| [Avatar](https://uiarc.dev/components/avatar) | A person or account needs a small identity mark, with a fallback when there is no photo. |
+| [Avatar Group](https://uiarc.dev/components/avatar-group) | A card or row must show who is involved (a team, reviewers, contributors) in the space of one avatar. |
+| [Input](https://uiarc.dev/components/input) | A single-line field needs a label, hint, and error state that line up with the rest of the form. |
+| [Textarea](https://uiarc.dev/components/textarea) | The answer is notes or a description, longer than one line. |
+| [Select](https://uiarc.dev/components/select) | The user picks one value from a short fixed list and should be able to do it by keyboard. |
+| [Combobox](https://uiarc.dev/components/combobox) | The list is long enough that the user should type to filter it before picking. |
+| [Checkbox](https://uiarc.dev/components/checkbox) | A yes or no choice is submitted with the form, not applied instantly. |
+| [Switch](https://uiarc.dev/components/switch) | A setting takes effect the moment it is flipped. |
+| [Multi Select](https://uiarc.dev/components/multi-select) | Several values are picked from one list and the field must stay readable once many are chosen. |
+| [Number Field](https://uiarc.dev/components/number-field) | A number has a minimum and maximum and should be stepped with buttons or arrow keys. |
+| [Password Field](https://uiarc.dev/components/password-field) | Users type a password and need to reveal it to check for typos. |
+| [Search Field](https://uiarc.dev/components/search-field) | A page or list needs an entry point for search that reads as search at a glance, with a clear button. |
+| [Tag Input](https://uiarc.dev/components/tag-input) | Users enter free-form labels, emails, or keywords that should turn into removable tags. |
+| [File Dropzone](https://uiarc.dev/components/file-dropzone) | Files arrive by drag and drop and the target should be large enough to hit without aiming. |
+| [Radio Group](https://uiarc.dev/components/radio-group) | One option is chosen from a few that should all stay visible for comparison. |
+| [Segmented Control](https://uiarc.dev/components/segmented-control) | Two to five views of the same content (list, board, calendar) switch in place. |
+| [Calendar](https://uiarc.dev/components/calendar) | Dates are browsed or picked in a month grid that sits inline on the page. |
+| [Date Picker](https://uiarc.dev/components/date-picker) | A form field takes one date and the calendar should open from it. |
+| [Time Picker](https://uiarc.dev/components/time-picker) | A form field takes a time of day and should work well from the keyboard. |
+| [Accordion](https://uiarc.dev/components/accordion) | Supporting details (FAQ, settings groups) should open in place instead of on another page. |
+| [Dialog](https://uiarc.dev/components/dialog) | A decision must be made before the user can continue, and the page behind it should wait. |
+| [Popover](https://uiarc.dev/components/popover) | A small panel of extra info or settings is anchored to the control that opened it. |
+| [Tooltip](https://uiarc.dev/components/tooltip) | An icon button or unfamiliar control needs a one-line label on hover or focus. |
+| [Tabs](https://uiarc.dev/components/tabs) | Related content splits into sections that share one place on the page. |
+| [Expandable Card](https://uiarc.dev/components/expandable-card) | A dense card should grow in place to show more when the user asks for it. |
+| [Breadcrumb](https://uiarc.dev/components/breadcrumb) | A page sits deep in a hierarchy and users need the path back up. |
+| [Alert](https://uiarc.dev/components/alert) | A message stays on the page until the problem is fixed or the user moves on. |
+| [Toast](https://uiarc.dev/components/toast) | A background action finished and a short confirmation should appear and leave on its own. |
+| [Progress](https://uiarc.dev/components/progress) | A task has a known length and the user wants to see how far along it is. |
+| [Skeleton](https://uiarc.dev/components/skeleton) | Content is loading and its space should be reserved so the layout does not jump. |
+| [Badge](https://uiarc.dev/components/badge) | A status, category, or count needs a small label next to a title or in a table cell. |
+| [Card](https://uiarc.dev/components/card) | Related content and its actions belong together in one bordered group. |
+| [Metric Card](https://uiarc.dev/components/metric-card) | A dashboard number needs context around it: the label, the change, and the period. |
+| [Empty State](https://uiarc.dev/components/empty-state) | A list or page has nothing in it yet and should point at the first step. |
+| [Tree View](https://uiarc.dev/components/tree-view) | Folders, files, or nested categories are browsed by expanding levels. |
+| [Pagination](https://uiarc.dev/components/pagination) | A long collection is split into pages and the user needs to know where they are in it. |
+| [Filter Toolbar](https://uiarc.dev/components/filter-toolbar) | A list has several filters that should sit above it and reset in one click. |
+| [Sortable Data Table](https://uiarc.dev/components/sortable-data-table) | Records are compared in columns and the user sorts by clicking a header. |
+| [Sparkline](https://uiarc.dev/components/sparkline) | A value needs its recent trend beside it, without the room for a full chart. |
+| [Gauge](https://uiarc.dev/components/gauge) | One value is read against a known range, like a score, a quota, or a health level. |
+| [Animated Counter](https://uiarc.dev/components/animated-counter) | A total changes live and the change should read as movement, not a flicker. |
+| [Code Block](https://uiarc.dev/components/code-block) | Code or a command is shown for reading and copying, with a copy button. |
+| [Text Reveal](https://uiarc.dev/components/text-reveal) | A short line of copy should appear with a quiet reveal rather than a flashy effect. |
+| [In-View Title](https://uiarc.dev/components/in-view-title) | Section titles on a long page should animate in as they scroll into view. |
+| [Text Morph](https://uiarc.dev/components/text-morph) | A label changes state ("Save" to "Saved") and the letters should morph instead of swapping. |
+| [Text Shimmer](https://uiarc.dev/components/text-shimmer) | A label shows that work is ongoing, like "Generating", with a calm light passing over it. |
+| [Hold to Confirm](https://uiarc.dev/components/hold-to-confirm) | A destructive action should need a press and hold, so a stray tap cannot trigger it. |
+| [Swipe Actions](https://uiarc.dev/components/swipe-actions) | List rows on touch devices have actions (archive, delete) revealed by a swipe, with a menu fallback. |
+| [Slider](https://uiarc.dev/components/slider) | A value or a range is picked by dragging along a track. |
+| [Inline Edit](https://uiarc.dev/components/inline-edit) | A name or title is renamed where it is shown, without opening a form. |
+| [Chip Group](https://uiarc.dev/components/chip-group) | A list is filtered by a few facets that are toggled as chips. |
+| [Password Strength](https://uiarc.dev/components/password-strength) | A sign-up or reset form should rate the new password as the user types it. |
+| [Bottom Sheet](https://uiarc.dev/components/bottom-sheet) | On phones, a panel should rest at a peek height and be dragged to full height. |
+| [Hover Card](https://uiarc.dev/components/hover-card) | A name or link should preview the person or page on hover without navigating. |
+| [Resizable Panels](https://uiarc.dev/components/resizable-panels) | Two or more panes share the screen and the user should set the split by dragging. |
+| [Toast Stack](https://uiarc.dev/components/toast-stack) | Several toasts can arrive at once and should stack at the edge instead of piling up. |
+| [Usage Meter](https://uiarc.dev/components/usage-meter) | A plan limit (storage, seats, credits) should show what uses it and how close it is to full. |
+| [Image Compare](https://uiarc.dev/components/image-compare) | Two versions of an image are compared by dragging a divider across them. |
+| [Carousel](https://uiarc.dev/components/carousel) | A row of slides is browsed by dragging, flicking, or arrow keys. |
+| [Bar Chart](https://uiarc.dev/components/bar-chart) | One measure is compared across days or categories and each bar should show its value on scrub. |
+| [Activity Heatmap](https://uiarc.dev/components/activity-heatmap) | A year of daily activity should read at a glance, one square per day. |
+| [Timeline](https://uiarc.dev/components/timeline) | Events are listed newest first and grouped by day, like an activity log. |
+| [User Menu](https://uiarc.dev/components/user-menu) | The avatar opens account, settings, theme, and sign out, and should become a bottom sheet on phones. |
+| [Stepper](https://uiarc.dev/components/stepper) | A multi-step flow should show which step the user is on and which are done. |
+| [Signature Pad](https://uiarc.dev/components/signature-pad) | A user signs with a finger or mouse, and the signature is exported as PNG or SVG. |
+| [Date Range Picker](https://uiarc.dev/components/date-range-picker) | A report or booking needs a start and end date, with presets like "Last 30 days". |
+| [Color Picker](https://uiarc.dev/components/color-picker) | Users pick a colour with format switching, an eyedropper, saved swatches, and a contrast check. |
+| [Line Chart](https://uiarc.dev/components/line-chart) | Several series over time are compared with a crosshair and series toggles in the legend. |
+| [Donut Chart](https://uiarc.dev/components/donut-chart) | A whole splits into a few parts and the active part's value should sit in the centre. |
+| [Streamgraph](https://uiarc.dev/components/streamgraph) | Many layers change over time and the user should isolate one layer to read it week by week. |
+| [Brush Chart](https://uiarc.dev/components/brush-chart) | A long dense time series is zoomed by dragging a window over an overview strip. |
+| [Ridgeline](https://uiarc.dev/components/ridgeline) | Distributions across several groups are compared, with quartiles readable on hover. |
+| [Treemap](https://uiarc.dev/components/treemap) | Nested totals (budget, disk use) are explored by clicking into tiles, with a breadcrumb back. |
+| [Waffle Chart](https://uiarc.dev/components/waffle-chart) | A share out of 100 should be counted in cells instead of estimated from a slice. |
+| [Slope Chart](https://uiarc.dev/components/slope-chart) | Two points in time are compared and the change in rank matters as much as the change in value. |
+| [Announcement Bar](https://uiarc.dev/components/announcement-bar) | A site-wide banner rotates messages or counts down, and collapses cleanly when dismissed. |
+| [Phone Input](https://uiarc.dev/components/phone-input) | A phone number is entered with a country picker and stored in E.164 format. |
+| [Shortcut Recorder](https://uiarc.dev/components/shortcut-recorder) | Users set their own keyboard shortcuts and need conflict warnings and a cheatsheet. |
+| [Confirm Morph](https://uiarc.dev/components/confirm-morph) | A destructive button should turn into its own confirmation, then a result with undo, without a dialog. |
+| [Mention Input](https://uiarc.dev/components/mention-input) | A message field needs @people and #channel mentions that behave as single tokens. |
+| [Chat Thread](https://uiarc.dev/components/chat-thread) | A chat needs grouped messages, reactions, read receipts, typing state, and a composer with attachments. |
+| [Rich Text Editor](https://uiarc.dev/components/rich-text-editor) | Users write formatted text with markdown shortcuts and a slash menu, without a heavy editor dependency. |
+| [Billing Toggle](https://uiarc.dev/components/billing-toggle) | A pricing page switches between monthly and yearly and should show the savings. |
+| [Scroll Area](https://uiarc.dev/components/scroll-area) | A scroll container needs thin overlay scrollbars and edge fades that appear only on overflow. |
+| [Radio Cards](https://uiarc.dev/components/radio-cards) | One option is chosen from cards that carry a price or description, like plans or shipping. |
+| [Comment Thread](https://uiarc.dev/components/comment-thread) | A document or task needs threaded comments with replies, mentions, reactions, and resolve. |
+| [Slot Text](https://uiarc.dev/components/slot-text) | A number or word should spin into its new value on slot machine reels. |
+| [Sign Up Form](https://uiarc.dev/components/blocks/signup-form) | *(Block)* A complete account creation form with validation, password strength, and a done state. |
+| [Logo Marquee](https://uiarc.dev/components/blocks/logo-marquee) | *(Block)* Customer logos should scroll in a quiet row, with a pause control for accessibility. |
+| [Plan Comparison](https://uiarc.dev/components/blocks/plan-comparison) | *(Block)* Plans are compared on the differences that matter, across monthly and yearly billing. |
+| [Command Palette](https://uiarc.dev/components/blocks/command-palette) | *(Block)* Power users should reach any action from the keyboard, with search, groups, and shortcuts. |
+| [Notification Center](https://uiarc.dev/components/blocks/notification-center) | *(Block)* Updates collect in one place with read state and grouping. |
+| [File Upload](https://uiarc.dev/components/blocks/file-upload) | *(Block)* A full upload flow with size and type limits, per-file progress, and errors. |
+| [OTP Input](https://uiarc.dev/components/blocks/otp-input) | *(Block)* A six-digit code is entered with paste support and arrow-key navigation. |
+| [Changelog Feed](https://uiarc.dev/components/blocks/changelog-feed) | *(Block)* Release notes are filtered, opened in place, and browsed by month. |
+| [Sign In](https://uiarc.dev/components/blocks/sign-in) | *(Block)* Sign-in runs from email to a six-digit code in one card that morphs between steps. |
+| [Page Header](https://uiarc.dev/components/blocks/page-header) | *(Block)* A project header with tabs should fold into a compact bar on scroll. |
+| [Empty States](https://uiarc.dev/components/blocks/empty-states) | *(Block)* Several empty tabs share one illustration that morphs between scenes. |
+| [Centered Login](https://uiarc.dev/components/blocks/login-centered) | *(Block)* A passkey-first login page, falling back to email and code. |
+| [Site Header](https://uiarc.dev/components/blocks/site-header) | *(Block)* A marketing site needs a sticky header with mega menus and a mobile sheet. |
+| [Site Footer](https://uiarc.dev/components/blocks/site-footer) | *(Block)* A marketing site needs a footer with link columns and a newsletter field. |
+| [Hero Section](https://uiarc.dev/components/blocks/hero-section) | *(Block)* A SaaS landing page opens with a full-screen hero showing the product at work. |
+| [FAQ Section](https://uiarc.dev/components/blocks/faq-section) | *(Block)* FAQs shown as an accordion, a topic rail, or a searchable list. |
+| [Contact Section](https://uiarc.dev/components/blocks/contact-section) | *(Block)* A contact page with a validated form, support channels, and office cards with local times. |
+| [Blog Grid](https://uiarc.dev/components/blocks/blog-grid) | *(Block)* A blog index with a featured post, category filter, pagination, and an in-place reader. |
+| [Comparison Table](https://uiarc.dev/components/blocks/comparison-table) | *(Block)* A "us versus them" table with a highlighted column that stacks on phones. |
+| [Stats Band](https://uiarc.dev/components/blocks/stats-band) | *(Block)* A landing page shows headline numbers that count up in view. |
+| [CTA Section](https://uiarc.dev/components/blocks/cta-section) | *(Block)* A page ends with a call to action, centred, split beside a setup card, or as a banner. |
+| [Newsletter Signup](https://uiarc.dev/components/blocks/newsletter-signup) | *(Block)* An email signup should show past issues and drop the next one on the stack on submit. |
 
 </details>
 
