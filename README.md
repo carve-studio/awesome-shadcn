@@ -18,15 +18,18 @@ Adding a resource? Read [CONTRIBUTING.md](CONTRIBUTING.md) first — a banner an
 - [Plugins](#plugins)
   - [Gradient Border](#gradient-border)
   - [Border Beam](#border-beam)
+  - [Coachmark](#coachmark)
 - [Components](#components)
   - [AICSS](#aicss)
   - [Beautiful UI](#beautiful-ui)
   - [Chánh Đại Components](#chánh-đại-components)
   - [Extend UI](#extend-ui)
+  - [Fancy Components](#fancy-components)
   - [Fluid Functionalism](#fluid-functionalism)
   - [interior.dev](#interiordev)
   - [Kobra](#kobra)
   - [Magic UI](#magic-ui)
+  - [Motion Primitives](#motion-primitives)
   - [ReUI](#reui)
   - [Spell UI](#spell-ui)
   - [Supabase UI](#supabase-ui)
@@ -70,6 +73,41 @@ A lightweight animated glowing border-beam effect for React, with multiple sizes
 **Reach for it when** exactly one element on the screen should pull the eye — an active plan, a highlighted feature, a running job — and a static border is not enough.
 
 **Reach elsewhere when** you need the outline only for styling, not attention: [Gradient Border](#gradient-border) costs no animation frames.
+
+### [Coachmark](https://sglza.xyz/coachmark)
+
+![Coachmark](assets/banners/coachmark.png)
+
+An unstyled React primitive for product tours, built on Base UI. Ships the sequencing a tour needs and no styling: one popup travels between targets, scrolls offscreen targets into view, and exposes motion state as data attributes.
+
+**Reach for it when** onboarding has to walk a user through several elements in order, and a stack of separate popovers would leave you hand-rolling step state, focus, and repositioning.
+
+**Reach elsewhere when** the hint is a single one-off next to one element — the shadcn `Popover` or `Tooltip` primitive already covers that, without a tour state machine.
+
+Installed as an npm package (`pnpm add coachmark`), not via `shadcn add`. It pulls in Base UI, so a project on Radix-based shadcn primitives carries both.
+
+<details>
+<summary><strong>14 parts and 1 hook</strong></summary>
+
+| Part | Use when |
+| --- | --- |
+| [Root](https://github.com/sglza/coachmark#root) | You need the tour's open state and active step in one place, controlled or uncontrolled. |
+| [Trigger](https://github.com/sglza/coachmark#trigger) | Something in the UI starts the tour — a "Take the tour" button or a help menu item. |
+| [Backdrop](https://github.com/sglza/coachmark#backdrop) | The rest of the page should recede and the current target should be spotlit. |
+| [Step](https://github.com/sglza/coachmark#step) | You are declaring one stop of the tour: its target ref and its content. |
+| [Positioner](https://github.com/sglza/coachmark#positioner) | The popup needs to sit on a specific side of the target, with offset and collision handling. |
+| [Popup](https://github.com/sglza/coachmark#popup) | The step needs a real `role="dialog"` container instead of a floating div. |
+| [Arrow](https://github.com/sglza/coachmark#arrow) | The target is one of several similar elements and the popup must point at exactly one. |
+| [Stepper](https://github.com/sglza/coachmark#stepper) | The user should see how long the tour is — "3 of 7" — before deciding to keep going. |
+| [Title](https://github.com/sglza/coachmark#title) | The step needs an accessible name, not just bold text. |
+| [Description](https://github.com/sglza/coachmark#description) | The step needs body copy that screen readers announce with the dialog. |
+| [Previous](https://github.com/sglza/coachmark#previous) | The tour is long enough that users will want to go back a step. |
+| [Next](https://github.com/sglza/coachmark#next) | Forward navigation, and finishing the tour on the last step, should be one button. |
+| [Close](https://github.com/sglza/coachmark#close) | The user must be able to leave the tour at any point. |
+| [Viewport](https://github.com/sglza/coachmark#viewport) | Steps differ in size and the popup should animate between them instead of snapping. |
+| [useCoachmark](https://github.com/sglza/coachmark#usecoachmark) | Something outside the popup reacts to the tour — highlighting a nav item, pausing a poll, logging step progress. |
+
+</details>
 
 ## Components
 
@@ -232,6 +270,66 @@ Open source document components for agents, internal tools, and user-facing revi
 | [PDF Dropzone](https://ui.extend.ai/ui/blocks#pdf-dropzone) | A focused single-purpose screen: drop a PDF, see it, act on it. Good first screen of a document product. |
 | [DOCX Editor Block](https://ui.extend.ai/ui/blocks#docx-editor-block) | The editing screen around the DOCX editor, including file state and save actions. |
 | [E-Signature Block](https://ui.extend.ai/ui/blocks#e-signature) | The complete signing screen: document, signer fields, and confirmation. |
+
+</details>
+
+### [Fancy Components](https://www.fancycomponents.dev/docs/introduction)
+
+![Fancy Components](assets/banners/fancy-components.png)
+
+A collection of playful, motion-heavy React components built on Motion, Three.js, and Matter.js — text effects, physics toys, and marquees rather than form controls.
+
+**Reach for it when** a landing page, hero, or portfolio needs one memorable moment: letters that scramble on hover, elements that fall and collide, a marquee that runs along an SVG path.
+
+**Reach elsewhere when** the surface is a product UI made of controls ([Fluid Functionalism](#fluid-functionalism)), the interaction has to be correct rather than surprising ([interior.dev](#interiordev)), or you want a broad set of polished marketing sections ([Magic UI](#magic-ui)).
+
+Several components are heavier than a typical shadcn install — physics, WebGL, or variable fonts — so check the dependency list on each page before dropping one into a shared layout.
+
+<details>
+<summary><strong>40 components</strong></summary>
+
+| Component | Use when |
+| --- | --- |
+| [Animated Gradient with SVG](https://www.fancycomponents.dev/docs/components/background/animated-gradient-svg) | A section needs a living colour background that stays cheap, without a canvas or shader. |
+| [Pixel Trail](https://www.fancycomponents.dev/docs/components/background/pixel-trail) | The hero should react to the cursor and you want the reaction to read as texture, not as a widget. |
+| [Circling Elements](https://www.fancycomponents.dev/docs/components/blocks/circling-elements) | Logos, avatars, or tags orbit a centre piece — an integrations or "works with" section. |
+| [CSS Box](https://www.fancycomponents.dev/docs/components/blocks/css-box) | A 3D cube that rotates through faces, for a feature that is genuinely three-sided. |
+| [Drag Elements](https://www.fancycomponents.dev/docs/components/blocks/drag-elements) | Visitors should be able to shove things around — a scrapbook, moodboard, or sticker wall. |
+| [Float](https://www.fancycomponents.dev/docs/components/blocks/float) | A static image or card needs idle motion so the page does not look frozen. |
+| [Marquee along SVG Path](https://www.fancycomponents.dev/docs/components/blocks/marquee-along-svg-path) | The ticker should follow a curve, arc, or shape instead of a straight line. |
+| [Media between Text](https://www.fancycomponents.dev/docs/components/blocks/media-between-text) | An editorial headline opens to reveal an image or video inside the sentence. |
+| [Screensaver](https://www.fancycomponents.dev/docs/components/blocks/screensaver) | A logo or badge bounces around an idle area — 404 pages, waiting states, playful footers. |
+| [Simple Marquee](https://www.fancycomponents.dev/docs/components/blocks/simple-marquee) | A straight scrolling strip of logos or quotes, with drag and speed control. |
+| [Stacking Cards](https://www.fancycomponents.dev/docs/components/blocks/stacking-cards) | Sections should stack and pin as the visitor scrolls, so each step gets its own beat. |
+| [Sticky Footer](https://www.fancycomponents.dev/docs/components/blocks/sticky-footer) | The footer is revealed from under the page instead of arriving after it. |
+| [Box Carousel](https://www.fancycomponents.dev/docs/components/carousel/box-carousel) | A gallery where slides rotate on a 3D box rather than sliding sideways. |
+| [Gooey SVG Filter](https://www.fancycomponents.dev/docs/components/filter/gooey-svg-filter) | Overlapping shapes or menu items should merge and split like liquid. |
+| [Pixelate SVG Filter](https://www.fancycomponents.dev/docs/components/filter/pixelate-svg-filter) | An image resolves from blocks to sharp — loading states, reveals, retro treatments. |
+| [Image Trail](https://www.fancycomponents.dev/docs/components/image/image-trail) | Moving the cursor should leave a trail of images across a portfolio or gallery. |
+| [Parallax Floating](https://www.fancycomponents.dev/docs/components/image/parallax-floating) | A cluster of images drifts at different depths as the pointer moves. |
+| [Cursor Attractor and Gravity](https://www.fancycomponents.dev/docs/components/physics/cursor-attractor-and-gravity) | Particles or elements should be pulled toward the cursor with real physics. |
+| [Elastic Line](https://www.fancycomponents.dev/docs/components/physics/elastic-line) | A divider or link should stretch and snap back when the pointer crosses it. |
+| [Gravity](https://www.fancycomponents.dev/docs/components/physics/gravity) | Tags, badges, or words should fall, collide, and pile up in a bounded area. |
+| [Basic Number Ticker](https://www.fancycomponents.dev/docs/components/text/basic-number-ticker) | A metric counts up when it enters the viewport, without pulling in a chart library. |
+| [Breathing Text](https://www.fancycomponents.dev/docs/components/text/breathing-text) | A headline should keep a slow pulse of weight so a quiet page still moves. |
+| [Letter 3D Swap](https://www.fancycomponents.dev/docs/components/text/letter-3d-swap) | Letters flip on hover as if each were a physical tile. |
+| [Letter Swap](https://www.fancycomponents.dev/docs/components/text/letter-swap) | A nav link or button should swap its label letter by letter on hover. |
+| [Random Letter Swap](https://www.fancycomponents.dev/docs/components/text/random-letter-swap) | Same swap, but out of order, so repeated hovers do not look identical. |
+| [Scramble Hover](https://www.fancycomponents.dev/docs/components/text/scramble-hover) | Menu items should decode on hover — the terminal look, without a terminal. |
+| [Scramble In](https://www.fancycomponents.dev/docs/components/text/scramble-in) | A headline resolves out of noise when it first appears. |
+| [Scroll and Swap Text](https://www.fancycomponents.dev/docs/components/text/scroll-and-swap) | The label changes as the section scrolls past, tying copy to scroll position. |
+| [Text along Path](https://www.fancycomponents.dev/docs/components/text/text-along-path) | Copy must follow a circle or curve — badges, seals, editorial headers. |
+| [Text Cursor Proximity](https://www.fancycomponents.dev/docs/components/text/text-cursor-proximity) | Text reacts to how close the cursor is, letter by letter, instead of on hover alone. |
+| [Text Highlighter](https://www.fancycomponents.dev/docs/components/text/text-highlighter) | A phrase should get a marker-pen highlight that draws itself in view. |
+| [Text Rotate](https://www.fancycomponents.dev/docs/components/text/text-rotate) | The hero line cycles through several words — "made for X" with a changing X. |
+| [Typewriter](https://www.fancycomponents.dev/docs/components/text/typewriter) | Copy types itself in, for a chat, terminal, or slow reveal. |
+| [Underline Animation](https://www.fancycomponents.dev/docs/components/text/underline-animation) | Links need an underline that draws in a specific direction rather than blinking on. |
+| [Underline to Background](https://www.fancycomponents.dev/docs/components/text/underline-to-background) | An underline grows into a filled block on hover, making the link a button-like target. |
+| [Variable Font and Cursor](https://www.fancycomponents.dev/docs/components/text/variable-font-and-cursor) | A variable font's axes track the pointer, so type responds to movement across the whole block. |
+| [Variable Font Cursor Proximity](https://www.fancycomponents.dev/docs/components/text/variable-font-cursor-proximity) | Weight and width shift per letter based on distance to the cursor. |
+| [Variable Font Hover by Letter](https://www.fancycomponents.dev/docs/components/text/variable-font-hover-by-letter) | Hovering a word animates its letters through the font's axes in sequence. |
+| [Variable Font Hover by Random Letter](https://www.fancycomponents.dev/docs/components/text/variable-font-hover-by-random-letter) | Same effect in random order, for a looser, less mechanical feel. |
+| [Vertical Cut Reveal](https://www.fancycomponents.dev/docs/components/text/vertical-cut-reveal) | Lines slide up out of a mask when the section enters view — the standard editorial entrance. |
 
 </details>
 
@@ -538,6 +636,59 @@ The broadest catalogue of marketing-grade visual effects here: backgrounds, text
 | [Video Text](https://magicui.design/docs/components/video-text) | Video plays inside the letterforms of a headline, for a bold single-word hero. |
 | [Warp Background](https://magicui.design/docs/components/warp-background) | A section background should warp toward a vanishing point, suggesting speed. |
 | [Word Rotate](https://magicui.design/docs/components/word-rotate) | The headline names several audiences and the last word cycles cleanly between them. |
+
+</details>
+
+### [Motion Primitives](https://motion-primitives.com/docs)
+
+![Motion Primitives](assets/banners/motion-primitives.png)
+
+Small, unopinionated animated primitives built on Motion and Tailwind — a shared motion vocabulary (in-view, transition panel, morphing dialog) rather than finished marketing sections.
+
+**Reach for it when** you are assembling your own components and need the motion layer underneath them: an element that animates on entering view, a panel that morphs between states, a number that counts, a text effect applied per character.
+
+**Reach elsewhere when** you want ready-made landing-page sections ([Magic UI](#magic-ui)), one-off spectacle effects for a hero ([Fancy Components](#fancy-components)), or interaction patterns hardened against layout shift and reduced motion ([interior.dev](#interiordev)).
+
+Several primitives are wrappers, not visuals — `InView`, `AnimatedGroup`, and `Tilt` take your own markup as children, so they compose into existing shadcn components instead of replacing them.
+
+<details>
+<summary><strong>33 components</strong></summary>
+
+| Component | Use when |
+| --- | --- |
+| [Accordion](https://motion-primitives.com/docs/accordion) | Collapsible sections whose open and close should be animated by the same system as the rest of the page. |
+| [Animated Background](https://motion-primitives.com/docs/animated-background) | A highlight should travel between tabs, nav items, or list rows instead of jumping. |
+| [Animated Group](https://motion-primitives.com/docs/animated-group) | A list, grid, or card set should stagger in as one group, without wiring each child. |
+| [Border Trail](https://motion-primitives.com/docs/border-trail) | A card or button needs a light running along its border to mark active or processing state. |
+| [Carousel](https://motion-primitives.com/docs/carousel) | A simple slider where you control the slide markup and only want the motion and gestures handled. |
+| [Cursor](https://motion-primitives.com/docs/cursor) | A custom cursor follows the pointer and changes over specific regions. |
+| [Dialog](https://motion-primitives.com/docs/dialog) | A modal with animated enter and exit that stays composable with your own content. |
+| [Disclosure](https://motion-primitives.com/docs/disclosure) | A single show/hide region animating to auto height — "read more", details panels. |
+| [In View](https://motion-primitives.com/docs/in-view) | Anything should animate the first time it scrolls into the viewport, once or every time. |
+| [Infinite Slider](https://motion-primitives.com/docs/infinite-slider) | A continuous logo or testimonial strip that loops without a visible seam. |
+| [Transition Panel](https://motion-primitives.com/docs/transition-panel) | Switching between steps, tabs, or views should animate the panel rather than swap it. |
+| [Text Effect](https://motion-primitives.com/docs/text-effect) | A headline animates in per character, word, or line, with your own variants. |
+| [Text Loop](https://motion-primitives.com/docs/text-loop) | One line cycles through several phrases — rotating value props or status labels. |
+| [Text Morph](https://motion-primitives.com/docs/text-morph) | One string becomes another and the shared letters should move rather than re-render. |
+| [Text Roll](https://motion-primitives.com/docs/text-roll) | Letters flip on a vertical axis for a hover or reveal with a mechanical feel. |
+| [Text Scramble](https://motion-primitives.com/docs/text-scramble) | Text decodes out of random characters when it appears or on trigger. |
+| [Text Shimmer](https://motion-primitives.com/docs/text-shimmer) | A label needs a subtle sheen to read as loading or as generated output. |
+| [Text Shimmer Wave](https://motion-primitives.com/docs/text-shimmer-wave) | Same shimmer with a wave through the letters, for a stronger streaming or thinking state. |
+| [Animated Number](https://motion-primitives.com/docs/animated-number) | A figure changes and the transition between values carries the meaning. |
+| [Sliding Number](https://motion-primitives.com/docs/sliding-number) | Digits roll like an odometer — counters, timers, live metrics. |
+| [Dock](https://motion-primitives.com/docs/dock) | A macOS-style magnifying dock for a toolbar or app launcher. |
+| [Glow Effect](https://motion-primitives.com/docs/glow-effect) | A card, button, or panel needs an animated glow to mark focus, activity, or a premium tier. |
+| [Image Comparison](https://motion-primitives.com/docs/image-comparison) | Before and after are compared with a draggable slider. |
+| [Scroll Progress](https://motion-primitives.com/docs/scroll-progress) | Long-form content needs a reading progress bar tied to a container or the page. |
+| [Spotlight](https://motion-primitives.com/docs/spotlight) | A light should follow the cursor across a card to make a flat surface feel lit. |
+| [Spinning Text](https://motion-primitives.com/docs/spinning-text) | Copy rotates around a circle — badges, seals, scroll cues. |
+| [Tilt](https://motion-primitives.com/docs/tilt) | A card should tilt in 3D toward the pointer, wrapping content you already have. |
+| [Toolbar Dynamic](https://motion-primitives.com/docs/toolbar-dynamic) | A toolbar changes its contents based on selection and the change should animate in place. |
+| [Toolbar Expandable](https://motion-primitives.com/docs/toolbar-expandable) | A compact bar expands into a panel of controls — the Dynamic Island pattern. |
+| [Magnetic](https://motion-primitives.com/docs/magnetic) | A button or link is pulled toward the cursor as it approaches, making targets feel eager. |
+| [Morphing Dialog](https://motion-primitives.com/docs/morphing-dialog) | A card should grow into its detail view from where it sits, keeping the visitor's place. |
+| [Morphing Popover](https://motion-primitives.com/docs/morphing-popover) | A trigger expands into a popover or composer rather than a popover appearing beside it. |
+| [Progressive Blur](https://motion-primitives.com/docs/progressive-blur) | Content should fade under a gradient blur at the edge of a scroll area or over an image. |
 
 </details>
 
