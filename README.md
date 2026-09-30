@@ -32,6 +32,8 @@ Adding a resource? Read [CONTRIBUTING.md](CONTRIBUTING.md) first — a banner an
   - [Transitions.dev](#transitionsdev)
   - [Unlumen UI](#unlumen-ui)
   - [Watermelon UI](#watermelon-ui)
+- [Charts](#charts)
+  - [Evil Charts](#evil-charts)
 - [Loaders](#loaders)
   - [Dot Matrix](#dot-matrix)
   - [Thinking Orbs](#thinking-orbs)
@@ -977,6 +979,70 @@ Complete application screens, useful as a starting layout or as a reference for 
 
 </details>
 
+
+## Charts
+
+### [Evil Charts](https://evilcharts.com/docs)
+
+![Evil Charts](assets/banners/evil-charts.png)
+
+Opinionated, animated chart components with gradients, patterns, glows, and reveal animations built in. Every chart ships twice behind one compound API: once on Recharts (SVG, themed through CSS variables) and once on Apache ECharts (Canvas by default, SVG on request). Switching engines is a rename, and the engine is picked per chart, so one dashboard can mix both.
+
+**Reach for it when** a chart is part of the design surface and the shadcn defaults look generic: a marketing stat, a product dashboard card, a KPI tile that should feel finished without hand-tuning Recharts.
+
+**Reach elsewhere when** the chart only needs to be correct and quiet: the official [shadcn charts](https://ui.shadcn.com/charts/area) are plainer and one dependency lighter. Nothing else on this list competes.
+
+Install one engine per chart with `npx shadcn@latest add @evilcharts/recharts-area-chart` or `@evilcharts/echarts-area-chart`, never both. Start on Recharts and move a single chart to ECharts once its data outgrows the DOM (long time series, high-frequency updates). Labels, colors, and icons live in one [Chart Config](https://evilcharts.com/docs/chart-config) object shared by both engines. Each chart page also carries ready-made variants (curve types, strokes, fills, loading states, 230 in the registry), installable from its page. The site publishes an [llms.txt](https://evilcharts.com/llms.txt), an [agent skill](https://evilcharts.com/skill.md), and an [MCP server](https://evilcharts.com/mcp).
+
+<details>
+<summary><strong>8 charts, 6 chart parts and 22 blocks</strong></summary>
+
+| Chart | Use when |
+| --- | --- |
+| [Area Chart](https://evilcharts.com/docs/recharts/area-chart/static) · [ECharts](https://evilcharts.com/docs/echarts/area-chart/static) | Volume over time where the filled shape carries the story: traffic, revenue, usage. |
+| [Line Chart](https://evilcharts.com/docs/recharts/line-chart/static) · [ECharts](https://evilcharts.com/docs/echarts/line-chart/static) | Comparing trends of a few series over time, where the slope matters more than the volume. |
+| [Bar Chart](https://evilcharts.com/docs/recharts/bar-chart/static) · [ECharts](https://evilcharts.com/docs/echarts/bar-chart/static) | Comparing discrete periods or categories side by side, stacked, or as percentages. |
+| [Composed Chart](https://evilcharts.com/docs/recharts/composed-chart/static) · [ECharts](https://evilcharts.com/docs/echarts/composed-chart/static) | Two measures on one axis, such as bars for volume with a line for the rate or target. |
+| [Pie Chart](https://evilcharts.com/docs/recharts/pie-chart/static) · [ECharts](https://evilcharts.com/docs/echarts/pie-chart/static) | A few parts of one whole, shown as a pie or a donut with a total in the center. |
+| [Radial Chart](https://evilcharts.com/docs/recharts/radial-chart/static) · [ECharts](https://evilcharts.com/docs/echarts/radial-chart/static) | Progress toward a goal or a gauge, in a full circle or a semi-circle. |
+| [Radar Chart](https://evilcharts.com/docs/recharts/radar-chart/static) · [ECharts](https://evilcharts.com/docs/echarts/radar-chart/static) | Comparing one or two profiles across five to eight dimensions, such as skills or plan features. |
+| [Sankey Chart](https://evilcharts.com/docs/recharts/sankey-chart/static) · [ECharts](https://evilcharts.com/docs/echarts/sankey-chart/static) | Showing where a flow goes: a funnel, a budget split, or traffic sources to outcomes. |
+
+| Chart part | Use when |
+| --- | --- |
+| [Chart](https://evilcharts.com/docs/recharts/installation) · [ECharts](https://evilcharts.com/docs/echarts/installation) | The base container every chart installs with; add it by hand only when composing a chart from parts. |
+| [Tooltip](https://evilcharts.com/docs/recharts/ui/tooltip) · [ECharts](https://evilcharts.com/docs/echarts/ui/tooltip) | Hovering a point should show the exact values, in a default or frosted-glass style. |
+| [Legend](https://evilcharts.com/docs/recharts/ui/legend) · [ECharts](https://evilcharts.com/docs/echarts/ui/legend) | The chart has more than one series and people need to tell them apart. |
+| [Dots](https://evilcharts.com/docs/recharts/ui/dots) · [ECharts](https://evilcharts.com/docs/echarts/ui/dots) | Each data point on a line or area should be visible or should pulse to mark live data. |
+| [Brush](https://evilcharts.com/docs/recharts/ui/brush) · [ECharts](https://evilcharts.com/docs/echarts/ui/brush) | A long series needs a draggable range so people can zoom into one period. |
+| [Background](https://evilcharts.com/docs/recharts/ui/background) | The plot area needs a pattern such as dots, grid, or hatching behind the data. Recharts only. |
+
+| Block | Use when |
+| --- | --- |
+| [Monospace Bar Chart](https://evilcharts.com/docs/recharts/bar-chart/blocks) | A terminal or developer-tool look, with hairline bars and monospace labels. |
+| [Hover Trace Bar Chart](https://evilcharts.com/docs/recharts/bar-chart/blocks) | Hovering should trace the active value with a line and an animated marker. |
+| [Grid Bar Chart](https://evilcharts.com/docs/recharts/bar-chart/blocks) | Bars built from stacked small squares, for a pixel or heatmap feel. |
+| [Isometric Bar Chart](https://evilcharts.com/docs/recharts/bar-chart/blocks) | A hero stat where 3D bars and a highlighted maximum should catch the eye. |
+| [Latency](https://evilcharts.com/docs/echarts/area-chart/blocks) | A monitoring card for p50, p95, and p99 latency with a stat row above the chart. |
+| [Portfolio](https://evilcharts.com/docs/echarts/area-chart/blocks) | Comparing the value of holdings over time, with values revealed on hover. |
+| [Benchmark](https://evilcharts.com/docs/echarts/area-chart/blocks) | Growth plotted against a dashed benchmark line, with the lead area hatched. |
+| [Audience](https://evilcharts.com/docs/echarts/area-chart/blocks) | An audience or follower growth card with a multi-stop gradient line. |
+| [Market Share](https://evilcharts.com/docs/echarts/pie-chart/blocks) | Market share in a grayscale donut with a center total and a two-column legend. |
+| [Progress Rings](https://evilcharts.com/docs/echarts/pie-chart/blocks) | Goal progress as dotted rings around one centered stat. |
+| [Budget](https://evilcharts.com/docs/echarts/radial-chart/blocks) | A budget breakdown with four gauges and a list of values. |
+| [Ride](https://evilcharts.com/docs/echarts/radial-chart/blocks) | An activity summary with a distance goal bar and three metric gauges. |
+| [Cache Tiers](https://evilcharts.com/docs/echarts/radial-chart/blocks) | Several shares in one semi-circle gauge, with a stat grid and a legend. |
+| [Revenue Mix](https://evilcharts.com/docs/echarts/pie-chart/blocks) | Revenue by source in a gapped donut with a side legend of amounts. |
+| [Reliability Score](https://evilcharts.com/docs/echarts/pie-chart/blocks) | One score placed on a banded arc with a range scale, like a credit or health score. |
+| [Payouts](https://evilcharts.com/docs/echarts/line-chart/blocks) | A payout or earnings trend card with a glowing line and stat rows. |
+| [Shipments](https://evilcharts.com/docs/echarts/line-chart/blocks) | This week against last week, as a solid and a dashed line. |
+| [Grid](https://evilcharts.com/docs/echarts/bar-chart/blocks) | The stacked-square bar look on ECharts, for dense or live data. |
+| [Monospace](https://evilcharts.com/docs/echarts/bar-chart/blocks) | The monospace sales card on ECharts, with hairline bars that expand on hover. |
+| [Peak](https://evilcharts.com/docs/echarts/bar-chart/blocks) | Stacked weekly numbers where only the best week is in color. |
+| [Allocation](https://evilcharts.com/docs/echarts/sankey-chart/blocks) | A fund or budget allocation flow with labeled nodes and a stat row. |
+| [Pipeline](https://evilcharts.com/docs/echarts/sankey-chart/blocks) | Revenue sources that converge through one hub and fan back out, with a total in the center. |
+
+</details>
 
 ## Loaders
 
