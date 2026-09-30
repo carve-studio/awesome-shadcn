@@ -25,6 +25,7 @@ Adding a resource? Read [CONTRIBUTING.md](CONTRIBUTING.md) first — a banner an
   - [Extend UI](#extend-ui)
   - [Fluid Functionalism](#fluid-functionalism)
   - [interior.dev](#interiordev)
+  - [Kobra](#kobra)
   - [Magic UI](#magic-ui)
   - [ReUI](#reui)
   - [Spell UI](#spell-ui)
@@ -347,6 +348,102 @@ Copy-paste micro-interactions organised by what the user is doing (action feedba
 | [Typing Indicator](https://interior.dev/docs/typing-indicator) | You need a "someone is typing" indicator for chat or collaborative UIs. |
 | [Value Flash](https://interior.dev/docs/value-flash) | You need numbers that flash or highlight when they change. |
 | [Wizard Steps](https://interior.dev/docs/wizard-steps) | You need a multi-step wizard whose transitions know forward from back. |
+
+</details>
+
+### [Kobra](https://kobra.systems/components)
+
+![Kobra](assets/banners/kobra.png)
+
+A full shadcn replacement set in one quiet house style: gray palette, two font weights, short asymmetric motion, and a sound cue on press. It covers the standard primitives plus a dozen agent surfaces and a few showpieces like a dissolving input and a magnetic dropzone.
+
+**Reach for it when** you want the whole app, including its agent chat, to share one restrained system and you are fine paying for it.
+
+**Reach elsewhere when** the project must stay free and open: [Fluid Functionalism](#fluid-functionalism) is the free system-wide alternative, and [ReUI](#reui) covers the heavy product widgets.
+
+Ten components install free with no account. The rest need a token from the Kobra dashboard, read from `KOBRA_TOKEN` through a `@kobra` registry entry in `components.json`. The free ten are Input OTP, Navigation Menu, Video, Carousel, AI Editor, Command Menu, Toast, Conversation, Halftone Dots, and Sound. [kobra.systems/llms.txt](https://kobra.systems/llms.txt) is the full agent-facing setup and house-style guide.
+
+<details>
+<summary><strong>76 components (10 free)</strong></summary>
+
+| Component | Use when |
+| --- | --- |
+| [Input OTP](https://kobra.systems/components/input-otp) | A login or verification step asks for a one-time code, and paste and success should read clearly. |
+| [Navigation Menu](https://kobra.systems/components/navigation-menu) | A site header groups many links into panels that open from the top bar. |
+| [Video](https://kobra.systems/components/video) | A product or marketing video needs a player that matches the app instead of the browser default. |
+| [Carousel](https://kobra.systems/components/carousel) | A row of cards, screenshots, or testimonials is wider than the screen and swipes sideways. |
+| [AI Editor](https://kobra.systems/components/ai-editor) | An agent edits a document and the user must see and steer those edits in place. |
+| [Command Menu](https://kobra.systems/components/command-menu) | Power users need Cmd+K to jump anywhere or run actions, with nested pages for deeper commands. |
+| [Toast](https://kobra.systems/components/toast) | A background result (saved, failed, undo) must be reported without interrupting the task. |
+| [Conversation](https://kobra.systems/components/conversation) | A human-to-human chat thread needs bubbles, reactions, and timestamps. |
+| [Halftone Dots](https://kobra.systems/components/halftone-dots) | A hero or feature section wants a visual that morphs between images as a dot field. |
+| [Sound](https://kobra.systems/components/sound) | Controls should give a subtle audio cue on press, consistently across the app. |
+| [Reasoning Steps](https://kobra.systems/components/reasoning-steps) | The model works for a while before answering and the user should see what it is doing. |
+| [File Diff](https://kobra.systems/components/file-diff) | An agent proposes a change to a file and the user must review it before accepting. |
+| [Image Generation](https://kobra.systems/components/image-generation) | An image is being generated and the wait should show a canvas forming, not a spinner. |
+| [Streaming Text](https://kobra.systems/components/streaming-text) | A model reply arrives token by token and should render smoothly as it streams. |
+| [Inline Citations](https://kobra.systems/components/inline-citations) | An answer draws on sources and each claim must link back to where it came from. |
+| [Code Block](https://kobra.systems/components/code-block) | A reply or doc page shows code that the user will copy or run. |
+| [Task List](https://kobra.systems/components/task-list) | An agent works through several steps and the user should track which are done. |
+| [Chat Input](https://kobra.systems/components/chat-input) | The user prompts an agent and needs a composer with attachments and send. |
+| [Plan Card](https://kobra.systems/components/plan-card) | An agent wants to run a multi-step plan and must get approval first. |
+| [Question Card](https://kobra.systems/components/question-card) | An agent cannot continue until the user answers a question. |
+| [Message](https://kobra.systems/components/message) | An agent chat needs structured user and assistant messages. |
+| [Message Scroller](https://kobra.systems/components/message-scroller) | A long conversation must stick to the bottom while streaming and let the user jump back. |
+| [Table](https://kobra.systems/components/table) | Structured rows and columns are shown without the weight of a data grid. |
+| [CRM Table](https://kobra.systems/components/crm-table) | A sales or account list shows owners, pipeline, and win odds in resizable columns. |
+| [Chart](https://kobra.systems/components/chart) | A dashboard needs line, bar, or area charts that match the rest of the set. |
+| [Item](https://kobra.systems/components/item) | A list or settings page repeats the same row of icon, text, and action. |
+| [Avatar](https://kobra.systems/components/avatar) | A person or team is shown by picture, with a fallback when there is none. |
+| [Badge](https://kobra.systems/components/badge) | A short status or category label sits next to a title or in a table cell. |
+| [Marker](https://kobra.systems/components/marker) | A point on a map, timeline, or list needs a labeled status dot. |
+| [Kbd](https://kobra.systems/components/kbd) | A menu item or tooltip shows the keyboard shortcut for an action. |
+| [Attachment](https://kobra.systems/components/attachment) | A file sent in a chat or form is shown as a compact chip with name and type. |
+| [Lightbox](https://kobra.systems/components/lightbox) | A photo gallery lays images out in justified rows and opens each one full size. |
+| [Alert](https://kobra.systems/components/alert) | A message belongs to one region of the page and must stay visible, unlike a toast. |
+| [Progress](https://kobra.systems/components/progress) | An upload, import, or setup has a known length and the user wants to see how far along it is. |
+| [Spinner](https://kobra.systems/components/spinner) | Work of unknown length is running inside a button or small area. |
+| [Skeleton](https://kobra.systems/components/skeleton) | Content is loading and the layout should hold its shape until it arrives. |
+| [Empty](https://kobra.systems/components/empty) | A list or page has nothing in it yet and should say what to do next. |
+| [Form](https://kobra.systems/components/form) | A form needs validation, error messages, and field layout wired together. |
+| [Input](https://kobra.systems/components/input) | A text field needs its label, hint, and attached buttons or icons as one control. |
+| [Input Dissolve](https://kobra.systems/components/input-dissolve) | A value is used up once submitted, like a sent message or a redeemed code, and the field should visibly let go of it. |
+| [Textarea](https://kobra.systems/components/textarea) | The user writes several lines, such as a comment, description, or note. |
+| [Button](https://kobra.systems/components/button) | Any action trigger, including busy states that keep the label and show a spinner. |
+| [Toggle Group](https://kobra.systems/components/toggle-group) | A toolbar has on/off controls, alone or joined into one bar, like text formatting. |
+| [Checkbox](https://kobra.systems/components/checkbox) | The user picks any number of options, or confirms a single agreement. |
+| [Radio Group](https://kobra.systems/components/radio-group) | The user must pick exactly one option from a short visible list. |
+| [Switch](https://kobra.systems/components/switch) | A setting takes effect immediately, with no save button. |
+| [Slider](https://kobra.systems/components/slider) | A value is tuned by feel along a range, like volume or a threshold. |
+| [Select](https://kobra.systems/components/select) | The user picks one option from a list too long for radios, styled or native on mobile. |
+| [Combobox](https://kobra.systems/components/combobox) | The option list is long enough that the user needs to type to find the right one. |
+| [Multi Select](https://kobra.systems/components/multi-select) | The user picks several values from one list, like tags or assignees, shown as chips. |
+| [Calendar](https://kobra.systems/components/calendar) | The user picks a date or a date range. |
+| [Color Palette](https://kobra.systems/components/color-palette) | The user picks a label or theme color from a fixed set of swatches. |
+| [Color Picker](https://kobra.systems/components/color-picker) | The user needs any color or a gradient with draggable stops and a hex field. |
+| [Magnetic Dropzone](https://kobra.systems/components/magnetic-dropzone) | File upload is a central moment, and the drop target should react as a file is dragged near. |
+| [Card](https://kobra.systems/components/card) | Related content and actions need one bordered surface. |
+| [Accordion](https://kobra.systems/components/accordion) | A page has more content than screen, like an FAQ, and only one section matters at a time. |
+| [Collapsible](https://kobra.systems/components/collapsible) | A single section, like advanced options, hides until the user asks for it. |
+| [Aspect Ratio](https://kobra.systems/components/aspect-ratio) | An image, video, or embed must keep its ratio while the layout resizes. |
+| [Logo Carousel](https://kobra.systems/components/logo-carousel) | A landing page shows customer logos, a few at a time, rotating through the rest. |
+| [Separator](https://kobra.systems/components/separator) | Two groups of content or menu items need a visible divider. |
+| [Scroll Area](https://kobra.systems/components/scroll-area) | A panel or dropdown scrolls on its own and native scrollbars look out of place. |
+| [Resizable](https://kobra.systems/components/resizable) | The user drags a handle to split space between panels, like a sidebar and an editor. |
+| [Direction](https://kobra.systems/components/direction) | The app supports right-to-left languages and components must flip. |
+| [Tabs](https://kobra.systems/components/tabs) | Several views share one space and the user switches between them. |
+| [Breadcrumb](https://kobra.systems/components/breadcrumb) | Pages sit deep in a hierarchy and the user needs the path back up. |
+| [Pagination](https://kobra.systems/components/pagination) | A long list is split into pages and the user moves between them. |
+| [Sidebar](https://kobra.systems/components/sidebar) | The app needs a collapsible main navigation along the side. |
+| [Menubar](https://kobra.systems/components/menubar) | A desktop-style app needs File, Edit, and View menus across the top. |
+| [Dialog](https://kobra.systems/components/dialog) | A focused task or a destructive confirmation must block the page until it is handled. |
+| [Sheet](https://kobra.systems/components/sheet) | Details or a form slide in from the edge while the page stays in context. |
+| [Drawer](https://kobra.systems/components/drawer) | On mobile, a panel slides up from the bottom and can be dragged away. |
+| [Popover](https://kobra.systems/components/popover) | Extra controls or content open next to their trigger without leaving the page. |
+| [Hover Card](https://kobra.systems/components/hover-card) | Hovering a name or link should preview richer details, like a profile. |
+| [Tooltip](https://kobra.systems/components/tooltip) | An icon button or truncated text needs a short label on hover or focus. |
+| [Dropdown Menu](https://kobra.systems/components/dropdown-menu) | Several actions hide behind one trigger, like a row's more menu. |
+| [Context Menu](https://kobra.systems/components/context-menu) | Right-click on an item should offer actions for that item. |
 
 </details>
 
