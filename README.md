@@ -18,14 +18,19 @@ Adding a resource? Read [CONTRIBUTING.md](CONTRIBUTING.md) first — a banner an
 - [Plugins](#plugins)
   - [Gradient Border](#gradient-border)
   - [Border Beam](#border-beam)
+  - [Coachmark](#coachmark)
 - [Components](#components)
   - [AICSS](#aicss)
+  - [Arc](#arc)
   - [Beautiful UI](#beautiful-ui)
   - [Chánh Đại Components](#chánh-đại-components)
   - [Extend UI](#extend-ui)
+  - [Fancy Components](#fancy-components)
   - [Fluid Functionalism](#fluid-functionalism)
   - [interior.dev](#interiordev)
+  - [Kobra](#kobra)
   - [Magic UI](#magic-ui)
+  - [Motion Primitives](#motion-primitives)
   - [ReUI](#reui)
   - [Spell UI](#spell-ui)
   - [Supabase UI](#supabase-ui)
@@ -72,6 +77,41 @@ A lightweight animated glowing border-beam effect for React, with multiple sizes
 
 **Reach elsewhere when** you need the outline only for styling, not attention: [Gradient Border](#gradient-border) costs no animation frames.
 
+### [Coachmark](https://sglza.xyz/coachmark)
+
+![Coachmark](assets/banners/coachmark.png)
+
+An unstyled React primitive for product tours, built on Base UI. Ships the sequencing a tour needs and no styling: one popup travels between targets, scrolls offscreen targets into view, and exposes motion state as data attributes.
+
+**Reach for it when** onboarding has to walk a user through several elements in order, and a stack of separate popovers would leave you hand-rolling step state, focus, and repositioning.
+
+**Reach elsewhere when** the hint is a single one-off next to one element — the shadcn `Popover` or `Tooltip` primitive already covers that, without a tour state machine.
+
+Installed as an npm package (`pnpm add coachmark`), not via `shadcn add`. It pulls in Base UI, so a project on Radix-based shadcn primitives carries both.
+
+<details>
+<summary><strong>14 parts and 1 hook</strong></summary>
+
+| Part | Use when |
+| --- | --- |
+| [Root](https://github.com/sglza/coachmark#root) | You need the tour's open state and active step in one place, controlled or uncontrolled. |
+| [Trigger](https://github.com/sglza/coachmark#trigger) | Something in the UI starts the tour — a "Take the tour" button or a help menu item. |
+| [Backdrop](https://github.com/sglza/coachmark#backdrop) | The rest of the page should recede and the current target should be spotlit. |
+| [Step](https://github.com/sglza/coachmark#step) | You are declaring one stop of the tour: its target ref and its content. |
+| [Positioner](https://github.com/sglza/coachmark#positioner) | The popup needs to sit on a specific side of the target, with offset and collision handling. |
+| [Popup](https://github.com/sglza/coachmark#popup) | The step needs a real `role="dialog"` container instead of a floating div. |
+| [Arrow](https://github.com/sglza/coachmark#arrow) | The target is one of several similar elements and the popup must point at exactly one. |
+| [Stepper](https://github.com/sglza/coachmark#stepper) | The user should see how long the tour is — "3 of 7" — before deciding to keep going. |
+| [Title](https://github.com/sglza/coachmark#title) | The step needs an accessible name, not just bold text. |
+| [Description](https://github.com/sglza/coachmark#description) | The step needs body copy that screen readers announce with the dialog. |
+| [Previous](https://github.com/sglza/coachmark#previous) | The tour is long enough that users will want to go back a step. |
+| [Next](https://github.com/sglza/coachmark#next) | Forward navigation, and finishing the tour on the last step, should be one button. |
+| [Close](https://github.com/sglza/coachmark#close) | The user must be able to leave the tour at any point. |
+| [Viewport](https://github.com/sglza/coachmark#viewport) | Steps differ in size and the popup should animate between them instead of snapping. |
+| [useCoachmark](https://github.com/sglza/coachmark#usecoachmark) | Something outside the popup reacts to the tour — highlighting a nav item, pausing a poll, logging step progress. |
+
+</details>
+
 ## Components
 
 ### [AICSS](https://www.aicss.dev/#components)
@@ -103,6 +143,146 @@ Free copy-paste blocks for everything an agent renders *inside* the conversation
 | [Data Table](https://www.aicss.dev/components/data-table) | Structured tool output belongs in rows and columns; a markdown table would lose alignment and overflow on mobile. |
 | [Comparison Table](https://www.aicss.dev/components/comparison-table) | The agent's answer is a recommendation between options and the user should be able to check the criteria side by side. |
 | [AI Agent Input](https://www.aicss.dev/components/ai-agent-input) | The composer needs agent affordances — multiline, submit-on-enter, attachments — and a plain `Textarea` would need all of it rebuilt. |
+
+</details>
+
+### [Arc](https://uiarc.dev/docs/introduction)
+
+![Arc](assets/banners/arc.png)
+
+A free, MIT-licensed library of components and blocks with calm spring motion: the standard controls, a dozen animated charts, chat and comment threads, and marketing sections. Every item is plain source styled with CSS modules on Arc's own tokens, not with Tailwind classes.
+
+**Reach for it when** one free library should carry a product end to end (forms, a dashboard with real charts, and the marketing site) with the same restrained motion and a reduced-motion path on every animation.
+
+**Reach elsewhere when** the project styles everything with Tailwind utilities and shadcn's theme variables. [Fluid Functionalism](#fluid-functionalism) is the Tailwind-native animated control set, [ReUI](#reui) covers the data grid and kanban, and [Magic UI](#magic-ui) has the broader marketing effects.
+
+Register the namespace as `"@uiarc": "https://uiarc.dev/r/{name}.json"` in `components.json`. The first install adds `registry/foundation.css`, which sets `--background`, `--foreground`, `--border` and `--accent` on `:root` with Arc's own values and switches dark mode with `data-theme="dark"` instead of the `.dark` class. In an existing shadcn project those names collide: if Arc's file loads last, shadcn hover surfaces that use `--accent` turn near-black. Check the theme after the first install. The registry also ships `arc-skill`, an agent skill for choosing and composing Arc items. Paid [Arc Pro](https://uiarc.dev/pro) charts and app blocks are not listed here.
+
+<details>
+<summary><strong>98 components and 22 blocks</strong></summary>
+
+| Component | Use when |
+| --- | --- |
+| [Button](https://uiarc.dev/components/button) | A standard action whose secondary and ghost states should stay quiet next to the primary one. |
+| [Action Button](https://uiarc.dev/components/action-button) | A toolbar repeats the same small actions all day and full-size buttons would crowd it. |
+| [Split Button](https://uiarc.dev/components/split-button) | One action is the default but two or three close variants ("Save as draft", "Save and close") belong on the same button. |
+| [Dropdown Menu](https://uiarc.dev/components/dropdown-menu) | A trigger opens a short list of actions that do not deserve their own buttons. |
+| [Context Menu](https://uiarc.dev/components/context-menu) | Actions belong to the object under the cursor and should open on right-click, next to it. |
+| [Copy Button](https://uiarc.dev/components/copy-button) | A key, URL, or command is copied and the user needs proof it landed without a toast. |
+| [Drawer](https://uiarc.dev/components/drawer) | Focused work (edit a record, fill a form) should happen beside the page instead of replacing it. |
+| [Theme Switch](https://uiarc.dev/components/theme-switch) | The app has light and dark themes and the toggle itself should animate the change. |
+| [Theme Switch Eclipse](https://uiarc.dev/components/theme-switch-eclipse) | The theme change should sweep across the page like a shadow crossing it. |
+| [Theme Switch Split](https://uiarc.dev/components/theme-switch-split) | The theme change should open from a thin seam in the middle of the screen. |
+| [Theme Switch Rise](https://uiarc.dev/components/theme-switch-rise) | The theme change should rise from the bottom edge into place. |
+| [Avatar](https://uiarc.dev/components/avatar) | A person or account needs a small identity mark, with a fallback when there is no photo. |
+| [Avatar Group](https://uiarc.dev/components/avatar-group) | A card or row must show who is involved (a team, reviewers, contributors) in the space of one avatar. |
+| [Input](https://uiarc.dev/components/input) | A single-line field needs a label, hint, and error state that line up with the rest of the form. |
+| [Textarea](https://uiarc.dev/components/textarea) | The answer is notes or a description, longer than one line. |
+| [Select](https://uiarc.dev/components/select) | The user picks one value from a short fixed list and should be able to do it by keyboard. |
+| [Combobox](https://uiarc.dev/components/combobox) | The list is long enough that the user should type to filter it before picking. |
+| [Checkbox](https://uiarc.dev/components/checkbox) | A yes or no choice is submitted with the form, not applied instantly. |
+| [Switch](https://uiarc.dev/components/switch) | A setting takes effect the moment it is flipped. |
+| [Multi Select](https://uiarc.dev/components/multi-select) | Several values are picked from one list and the field must stay readable once many are chosen. |
+| [Number Field](https://uiarc.dev/components/number-field) | A number has a minimum and maximum and should be stepped with buttons or arrow keys. |
+| [Password Field](https://uiarc.dev/components/password-field) | Users type a password and need to reveal it to check for typos. |
+| [Search Field](https://uiarc.dev/components/search-field) | A page or list needs an entry point for search that reads as search at a glance, with a clear button. |
+| [Tag Input](https://uiarc.dev/components/tag-input) | Users enter free-form labels, emails, or keywords that should turn into removable tags. |
+| [File Dropzone](https://uiarc.dev/components/file-dropzone) | Files arrive by drag and drop and the target should be large enough to hit without aiming. |
+| [Radio Group](https://uiarc.dev/components/radio-group) | One option is chosen from a few that should all stay visible for comparison. |
+| [Segmented Control](https://uiarc.dev/components/segmented-control) | Two to five views of the same content (list, board, calendar) switch in place. |
+| [Calendar](https://uiarc.dev/components/calendar) | Dates are browsed or picked in a month grid that sits inline on the page. |
+| [Date Picker](https://uiarc.dev/components/date-picker) | A form field takes one date and the calendar should open from it. |
+| [Time Picker](https://uiarc.dev/components/time-picker) | A form field takes a time of day and should work well from the keyboard. |
+| [Accordion](https://uiarc.dev/components/accordion) | Supporting details (FAQ, settings groups) should open in place instead of on another page. |
+| [Dialog](https://uiarc.dev/components/dialog) | A decision must be made before the user can continue, and the page behind it should wait. |
+| [Popover](https://uiarc.dev/components/popover) | A small panel of extra info or settings is anchored to the control that opened it. |
+| [Tooltip](https://uiarc.dev/components/tooltip) | An icon button or unfamiliar control needs a one-line label on hover or focus. |
+| [Tabs](https://uiarc.dev/components/tabs) | Related content splits into sections that share one place on the page. |
+| [Expandable Card](https://uiarc.dev/components/expandable-card) | A dense card should grow in place to show more when the user asks for it. |
+| [Breadcrumb](https://uiarc.dev/components/breadcrumb) | A page sits deep in a hierarchy and users need the path back up. |
+| [Alert](https://uiarc.dev/components/alert) | A message stays on the page until the problem is fixed or the user moves on. |
+| [Toast](https://uiarc.dev/components/toast) | A background action finished and a short confirmation should appear and leave on its own. |
+| [Progress](https://uiarc.dev/components/progress) | A task has a known length and the user wants to see how far along it is. |
+| [Skeleton](https://uiarc.dev/components/skeleton) | Content is loading and its space should be reserved so the layout does not jump. |
+| [Badge](https://uiarc.dev/components/badge) | A status, category, or count needs a small label next to a title or in a table cell. |
+| [Card](https://uiarc.dev/components/card) | Related content and its actions belong together in one bordered group. |
+| [Metric Card](https://uiarc.dev/components/metric-card) | A dashboard number needs context around it: the label, the change, and the period. |
+| [Empty State](https://uiarc.dev/components/empty-state) | A list or page has nothing in it yet and should point at the first step. |
+| [Tree View](https://uiarc.dev/components/tree-view) | Folders, files, or nested categories are browsed by expanding levels. |
+| [Pagination](https://uiarc.dev/components/pagination) | A long collection is split into pages and the user needs to know where they are in it. |
+| [Filter Toolbar](https://uiarc.dev/components/filter-toolbar) | A list has several filters that should sit above it and reset in one click. |
+| [Sortable Data Table](https://uiarc.dev/components/sortable-data-table) | Records are compared in columns and the user sorts by clicking a header. |
+| [Sparkline](https://uiarc.dev/components/sparkline) | A value needs its recent trend beside it, without the room for a full chart. |
+| [Gauge](https://uiarc.dev/components/gauge) | One value is read against a known range, like a score, a quota, or a health level. |
+| [Animated Counter](https://uiarc.dev/components/animated-counter) | A total changes live and the change should read as movement, not a flicker. |
+| [Code Block](https://uiarc.dev/components/code-block) | Code or a command is shown for reading and copying, with a copy button. |
+| [Text Reveal](https://uiarc.dev/components/text-reveal) | A short line of copy should appear with a quiet reveal rather than a flashy effect. |
+| [In-View Title](https://uiarc.dev/components/in-view-title) | Section titles on a long page should animate in as they scroll into view. |
+| [Text Morph](https://uiarc.dev/components/text-morph) | A label changes state ("Save" to "Saved") and the letters should morph instead of swapping. |
+| [Text Shimmer](https://uiarc.dev/components/text-shimmer) | A label shows that work is ongoing, like "Generating", with a calm light passing over it. |
+| [Hold to Confirm](https://uiarc.dev/components/hold-to-confirm) | A destructive action should need a press and hold, so a stray tap cannot trigger it. |
+| [Swipe Actions](https://uiarc.dev/components/swipe-actions) | List rows on touch devices have actions (archive, delete) revealed by a swipe, with a menu fallback. |
+| [Slider](https://uiarc.dev/components/slider) | A value or a range is picked by dragging along a track. |
+| [Inline Edit](https://uiarc.dev/components/inline-edit) | A name or title is renamed where it is shown, without opening a form. |
+| [Chip Group](https://uiarc.dev/components/chip-group) | A list is filtered by a few facets that are toggled as chips. |
+| [Password Strength](https://uiarc.dev/components/password-strength) | A sign-up or reset form should rate the new password as the user types it. |
+| [Bottom Sheet](https://uiarc.dev/components/bottom-sheet) | On phones, a panel should rest at a peek height and be dragged to full height. |
+| [Hover Card](https://uiarc.dev/components/hover-card) | A name or link should preview the person or page on hover without navigating. |
+| [Resizable Panels](https://uiarc.dev/components/resizable-panels) | Two or more panes share the screen and the user should set the split by dragging. |
+| [Toast Stack](https://uiarc.dev/components/toast-stack) | Several toasts can arrive at once and should stack at the edge instead of piling up. |
+| [Usage Meter](https://uiarc.dev/components/usage-meter) | A plan limit (storage, seats, credits) should show what uses it and how close it is to full. |
+| [Image Compare](https://uiarc.dev/components/image-compare) | Two versions of an image are compared by dragging a divider across them. |
+| [Carousel](https://uiarc.dev/components/carousel) | A row of slides is browsed by dragging, flicking, or arrow keys. |
+| [Bar Chart](https://uiarc.dev/components/bar-chart) | One measure is compared across days or categories and each bar should show its value on scrub. |
+| [Activity Heatmap](https://uiarc.dev/components/activity-heatmap) | A year of daily activity should read at a glance, one square per day. |
+| [Timeline](https://uiarc.dev/components/timeline) | Events are listed newest first and grouped by day, like an activity log. |
+| [User Menu](https://uiarc.dev/components/user-menu) | The avatar opens account, settings, theme, and sign out, and should become a bottom sheet on phones. |
+| [Stepper](https://uiarc.dev/components/stepper) | A multi-step flow should show which step the user is on and which are done. |
+| [Signature Pad](https://uiarc.dev/components/signature-pad) | A user signs with a finger or mouse, and the signature is exported as PNG or SVG. |
+| [Date Range Picker](https://uiarc.dev/components/date-range-picker) | A report or booking needs a start and end date, with presets like "Last 30 days". |
+| [Color Picker](https://uiarc.dev/components/color-picker) | Users pick a colour with format switching, an eyedropper, saved swatches, and a contrast check. |
+| [Line Chart](https://uiarc.dev/components/line-chart) | Several series over time are compared with a crosshair and series toggles in the legend. |
+| [Donut Chart](https://uiarc.dev/components/donut-chart) | A whole splits into a few parts and the active part's value should sit in the centre. |
+| [Streamgraph](https://uiarc.dev/components/streamgraph) | Many layers change over time and the user should isolate one layer to read it week by week. |
+| [Brush Chart](https://uiarc.dev/components/brush-chart) | A long dense time series is zoomed by dragging a window over an overview strip. |
+| [Ridgeline](https://uiarc.dev/components/ridgeline) | Distributions across several groups are compared, with quartiles readable on hover. |
+| [Treemap](https://uiarc.dev/components/treemap) | Nested totals (budget, disk use) are explored by clicking into tiles, with a breadcrumb back. |
+| [Waffle Chart](https://uiarc.dev/components/waffle-chart) | A share out of 100 should be counted in cells instead of estimated from a slice. |
+| [Slope Chart](https://uiarc.dev/components/slope-chart) | Two points in time are compared and the change in rank matters as much as the change in value. |
+| [Announcement Bar](https://uiarc.dev/components/announcement-bar) | A site-wide banner rotates messages or counts down, and collapses cleanly when dismissed. |
+| [Phone Input](https://uiarc.dev/components/phone-input) | A phone number is entered with a country picker and stored in E.164 format. |
+| [Shortcut Recorder](https://uiarc.dev/components/shortcut-recorder) | Users set their own keyboard shortcuts and need conflict warnings and a cheatsheet. |
+| [Confirm Morph](https://uiarc.dev/components/confirm-morph) | A destructive button should turn into its own confirmation, then a result with undo, without a dialog. |
+| [Mention Input](https://uiarc.dev/components/mention-input) | A message field needs @people and #channel mentions that behave as single tokens. |
+| [Chat Thread](https://uiarc.dev/components/chat-thread) | A chat needs grouped messages, reactions, read receipts, typing state, and a composer with attachments. |
+| [Rich Text Editor](https://uiarc.dev/components/rich-text-editor) | Users write formatted text with markdown shortcuts and a slash menu, without a heavy editor dependency. |
+| [Billing Toggle](https://uiarc.dev/components/billing-toggle) | A pricing page switches between monthly and yearly and should show the savings. |
+| [Scroll Area](https://uiarc.dev/components/scroll-area) | A scroll container needs thin overlay scrollbars and edge fades that appear only on overflow. |
+| [Radio Cards](https://uiarc.dev/components/radio-cards) | One option is chosen from cards that carry a price or description, like plans or shipping. |
+| [Comment Thread](https://uiarc.dev/components/comment-thread) | A document or task needs threaded comments with replies, mentions, reactions, and resolve. |
+| [Slot Text](https://uiarc.dev/components/slot-text) | A number or word should spin into its new value on slot machine reels. |
+| [Sign Up Form](https://uiarc.dev/components/blocks/signup-form) | *(Block)* A complete account creation form with validation, password strength, and a done state. |
+| [Logo Marquee](https://uiarc.dev/components/blocks/logo-marquee) | *(Block)* Customer logos should scroll in a quiet row, with a pause control for accessibility. |
+| [Plan Comparison](https://uiarc.dev/components/blocks/plan-comparison) | *(Block)* Plans are compared on the differences that matter, across monthly and yearly billing. |
+| [Command Palette](https://uiarc.dev/components/blocks/command-palette) | *(Block)* Power users should reach any action from the keyboard, with search, groups, and shortcuts. |
+| [Notification Center](https://uiarc.dev/components/blocks/notification-center) | *(Block)* Updates collect in one place with read state and grouping. |
+| [File Upload](https://uiarc.dev/components/blocks/file-upload) | *(Block)* A full upload flow with size and type limits, per-file progress, and errors. |
+| [OTP Input](https://uiarc.dev/components/blocks/otp-input) | *(Block)* A six-digit code is entered with paste support and arrow-key navigation. |
+| [Changelog Feed](https://uiarc.dev/components/blocks/changelog-feed) | *(Block)* Release notes are filtered, opened in place, and browsed by month. |
+| [Sign In](https://uiarc.dev/components/blocks/sign-in) | *(Block)* Sign-in runs from email to a six-digit code in one card that morphs between steps. |
+| [Page Header](https://uiarc.dev/components/blocks/page-header) | *(Block)* A project header with tabs should fold into a compact bar on scroll. |
+| [Empty States](https://uiarc.dev/components/blocks/empty-states) | *(Block)* Several empty tabs share one illustration that morphs between scenes. |
+| [Centered Login](https://uiarc.dev/components/blocks/login-centered) | *(Block)* A passkey-first login page, falling back to email and code. |
+| [Site Header](https://uiarc.dev/components/blocks/site-header) | *(Block)* A marketing site needs a sticky header with mega menus and a mobile sheet. |
+| [Site Footer](https://uiarc.dev/components/blocks/site-footer) | *(Block)* A marketing site needs a footer with link columns and a newsletter field. |
+| [Hero Section](https://uiarc.dev/components/blocks/hero-section) | *(Block)* A SaaS landing page opens with a full-screen hero showing the product at work. |
+| [FAQ Section](https://uiarc.dev/components/blocks/faq-section) | *(Block)* FAQs shown as an accordion, a topic rail, or a searchable list. |
+| [Contact Section](https://uiarc.dev/components/blocks/contact-section) | *(Block)* A contact page with a validated form, support channels, and office cards with local times. |
+| [Blog Grid](https://uiarc.dev/components/blocks/blog-grid) | *(Block)* A blog index with a featured post, category filter, pagination, and an in-place reader. |
+| [Comparison Table](https://uiarc.dev/components/blocks/comparison-table) | *(Block)* A "us versus them" table with a highlighted column that stacks on phones. |
+| [Stats Band](https://uiarc.dev/components/blocks/stats-band) | *(Block)* A landing page shows headline numbers that count up in view. |
+| [CTA Section](https://uiarc.dev/components/blocks/cta-section) | *(Block)* A page ends with a call to action, centred, split beside a setup card, or as a banner. |
+| [Newsletter Signup](https://uiarc.dev/components/blocks/newsletter-signup) | *(Block)* An email signup should show past issues and drop the next one on the stack on submit. |
 
 </details>
 
@@ -236,6 +416,66 @@ Open source document components for agents, internal tools, and user-facing revi
 
 </details>
 
+### [Fancy Components](https://www.fancycomponents.dev/docs/introduction)
+
+![Fancy Components](assets/banners/fancy-components.png)
+
+A collection of playful, motion-heavy React components built on Motion, Three.js, and Matter.js — text effects, physics toys, and marquees rather than form controls.
+
+**Reach for it when** a landing page, hero, or portfolio needs one memorable moment: letters that scramble on hover, elements that fall and collide, a marquee that runs along an SVG path.
+
+**Reach elsewhere when** the surface is a product UI made of controls ([Fluid Functionalism](#fluid-functionalism)), the interaction has to be correct rather than surprising ([interior.dev](#interiordev)), or you want a broad set of polished marketing sections ([Magic UI](#magic-ui)).
+
+Several components are heavier than a typical shadcn install — physics, WebGL, or variable fonts — so check the dependency list on each page before dropping one into a shared layout.
+
+<details>
+<summary><strong>40 components</strong></summary>
+
+| Component | Use when |
+| --- | --- |
+| [Animated Gradient with SVG](https://www.fancycomponents.dev/docs/components/background/animated-gradient-svg) | A section needs a living colour background that stays cheap, without a canvas or shader. |
+| [Pixel Trail](https://www.fancycomponents.dev/docs/components/background/pixel-trail) | The hero should react to the cursor and you want the reaction to read as texture, not as a widget. |
+| [Circling Elements](https://www.fancycomponents.dev/docs/components/blocks/circling-elements) | Logos, avatars, or tags orbit a centre piece — an integrations or "works with" section. |
+| [CSS Box](https://www.fancycomponents.dev/docs/components/blocks/css-box) | A 3D cube that rotates through faces, for a feature that is genuinely three-sided. |
+| [Drag Elements](https://www.fancycomponents.dev/docs/components/blocks/drag-elements) | Visitors should be able to shove things around — a scrapbook, moodboard, or sticker wall. |
+| [Float](https://www.fancycomponents.dev/docs/components/blocks/float) | A static image or card needs idle motion so the page does not look frozen. |
+| [Marquee along SVG Path](https://www.fancycomponents.dev/docs/components/blocks/marquee-along-svg-path) | The ticker should follow a curve, arc, or shape instead of a straight line. |
+| [Media between Text](https://www.fancycomponents.dev/docs/components/blocks/media-between-text) | An editorial headline opens to reveal an image or video inside the sentence. |
+| [Screensaver](https://www.fancycomponents.dev/docs/components/blocks/screensaver) | A logo or badge bounces around an idle area — 404 pages, waiting states, playful footers. |
+| [Simple Marquee](https://www.fancycomponents.dev/docs/components/blocks/simple-marquee) | A straight scrolling strip of logos or quotes, with drag and speed control. |
+| [Stacking Cards](https://www.fancycomponents.dev/docs/components/blocks/stacking-cards) | Sections should stack and pin as the visitor scrolls, so each step gets its own beat. |
+| [Sticky Footer](https://www.fancycomponents.dev/docs/components/blocks/sticky-footer) | The footer is revealed from under the page instead of arriving after it. |
+| [Box Carousel](https://www.fancycomponents.dev/docs/components/carousel/box-carousel) | A gallery where slides rotate on a 3D box rather than sliding sideways. |
+| [Gooey SVG Filter](https://www.fancycomponents.dev/docs/components/filter/gooey-svg-filter) | Overlapping shapes or menu items should merge and split like liquid. |
+| [Pixelate SVG Filter](https://www.fancycomponents.dev/docs/components/filter/pixelate-svg-filter) | An image resolves from blocks to sharp — loading states, reveals, retro treatments. |
+| [Image Trail](https://www.fancycomponents.dev/docs/components/image/image-trail) | Moving the cursor should leave a trail of images across a portfolio or gallery. |
+| [Parallax Floating](https://www.fancycomponents.dev/docs/components/image/parallax-floating) | A cluster of images drifts at different depths as the pointer moves. |
+| [Cursor Attractor and Gravity](https://www.fancycomponents.dev/docs/components/physics/cursor-attractor-and-gravity) | Particles or elements should be pulled toward the cursor with real physics. |
+| [Elastic Line](https://www.fancycomponents.dev/docs/components/physics/elastic-line) | A divider or link should stretch and snap back when the pointer crosses it. |
+| [Gravity](https://www.fancycomponents.dev/docs/components/physics/gravity) | Tags, badges, or words should fall, collide, and pile up in a bounded area. |
+| [Basic Number Ticker](https://www.fancycomponents.dev/docs/components/text/basic-number-ticker) | A metric counts up when it enters the viewport, without pulling in a chart library. |
+| [Breathing Text](https://www.fancycomponents.dev/docs/components/text/breathing-text) | A headline should keep a slow pulse of weight so a quiet page still moves. |
+| [Letter 3D Swap](https://www.fancycomponents.dev/docs/components/text/letter-3d-swap) | Letters flip on hover as if each were a physical tile. |
+| [Letter Swap](https://www.fancycomponents.dev/docs/components/text/letter-swap) | A nav link or button should swap its label letter by letter on hover. |
+| [Random Letter Swap](https://www.fancycomponents.dev/docs/components/text/random-letter-swap) | Same swap, but out of order, so repeated hovers do not look identical. |
+| [Scramble Hover](https://www.fancycomponents.dev/docs/components/text/scramble-hover) | Menu items should decode on hover — the terminal look, without a terminal. |
+| [Scramble In](https://www.fancycomponents.dev/docs/components/text/scramble-in) | A headline resolves out of noise when it first appears. |
+| [Scroll and Swap Text](https://www.fancycomponents.dev/docs/components/text/scroll-and-swap) | The label changes as the section scrolls past, tying copy to scroll position. |
+| [Text along Path](https://www.fancycomponents.dev/docs/components/text/text-along-path) | Copy must follow a circle or curve — badges, seals, editorial headers. |
+| [Text Cursor Proximity](https://www.fancycomponents.dev/docs/components/text/text-cursor-proximity) | Text reacts to how close the cursor is, letter by letter, instead of on hover alone. |
+| [Text Highlighter](https://www.fancycomponents.dev/docs/components/text/text-highlighter) | A phrase should get a marker-pen highlight that draws itself in view. |
+| [Text Rotate](https://www.fancycomponents.dev/docs/components/text/text-rotate) | The hero line cycles through several words — "made for X" with a changing X. |
+| [Typewriter](https://www.fancycomponents.dev/docs/components/text/typewriter) | Copy types itself in, for a chat, terminal, or slow reveal. |
+| [Underline Animation](https://www.fancycomponents.dev/docs/components/text/underline-animation) | Links need an underline that draws in a specific direction rather than blinking on. |
+| [Underline to Background](https://www.fancycomponents.dev/docs/components/text/underline-to-background) | An underline grows into a filled block on hover, making the link a button-like target. |
+| [Variable Font and Cursor](https://www.fancycomponents.dev/docs/components/text/variable-font-and-cursor) | A variable font's axes track the pointer, so type responds to movement across the whole block. |
+| [Variable Font Cursor Proximity](https://www.fancycomponents.dev/docs/components/text/variable-font-cursor-proximity) | Weight and width shift per letter based on distance to the cursor. |
+| [Variable Font Hover by Letter](https://www.fancycomponents.dev/docs/components/text/variable-font-hover-by-letter) | Hovering a word animates its letters through the font's axes in sequence. |
+| [Variable Font Hover by Random Letter](https://www.fancycomponents.dev/docs/components/text/variable-font-hover-by-random-letter) | Same effect in random order, for a looser, less mechanical feel. |
+| [Vertical Cut Reveal](https://www.fancycomponents.dev/docs/components/text/vertical-cut-reveal) | Lines slide up out of a mask when the section enters view — the standard editorial entrance. |
+
+</details>
+
 ### [Fluid Functionalism](https://www.fluidfunctionalism.com/)
 
 ![Fluid Functionalism](assets/banners/fluid-functionalism.png)
@@ -352,6 +592,102 @@ Copy-paste micro-interactions organised by what the user is doing (action feedba
 
 </details>
 
+### [Kobra](https://kobra.systems/components)
+
+![Kobra](assets/banners/kobra.png)
+
+A full shadcn replacement set in one quiet house style: gray palette, two font weights, short asymmetric motion, and a sound cue on press. It covers the standard primitives plus a dozen agent surfaces and a few showpieces like a dissolving input and a magnetic dropzone.
+
+**Reach for it when** you want the whole app, including its agent chat, to share one restrained system and you are fine paying for it.
+
+**Reach elsewhere when** the project must stay free and open: [Fluid Functionalism](#fluid-functionalism) is the free system-wide alternative, and [ReUI](#reui) covers the heavy product widgets.
+
+Ten components install free with no account. The rest need a token from the Kobra dashboard, read from `KOBRA_TOKEN` through a `@kobra` registry entry in `components.json`. The free ten are Input OTP, Navigation Menu, Video, Carousel, AI Editor, Command Menu, Toast, Conversation, Halftone Dots, and Sound. [kobra.systems/llms.txt](https://kobra.systems/llms.txt) is the full agent-facing setup and house-style guide.
+
+<details>
+<summary><strong>76 components (10 free)</strong></summary>
+
+| Component | Use when |
+| --- | --- |
+| [Input OTP](https://kobra.systems/components/input-otp) | A login or verification step asks for a one-time code, and paste and success should read clearly. |
+| [Navigation Menu](https://kobra.systems/components/navigation-menu) | A site header groups many links into panels that open from the top bar. |
+| [Video](https://kobra.systems/components/video) | A product or marketing video needs a player that matches the app instead of the browser default. |
+| [Carousel](https://kobra.systems/components/carousel) | A row of cards, screenshots, or testimonials is wider than the screen and swipes sideways. |
+| [AI Editor](https://kobra.systems/components/ai-editor) | An agent edits a document and the user must see and steer those edits in place. |
+| [Command Menu](https://kobra.systems/components/command-menu) | Power users need Cmd+K to jump anywhere or run actions, with nested pages for deeper commands. |
+| [Toast](https://kobra.systems/components/toast) | A background result (saved, failed, undo) must be reported without interrupting the task. |
+| [Conversation](https://kobra.systems/components/conversation) | A human-to-human chat thread needs bubbles, reactions, and timestamps. |
+| [Halftone Dots](https://kobra.systems/components/halftone-dots) | A hero or feature section wants a visual that morphs between images as a dot field. |
+| [Sound](https://kobra.systems/components/sound) | Controls should give a subtle audio cue on press, consistently across the app. |
+| [Reasoning Steps](https://kobra.systems/components/reasoning-steps) | The model works for a while before answering and the user should see what it is doing. |
+| [File Diff](https://kobra.systems/components/file-diff) | An agent proposes a change to a file and the user must review it before accepting. |
+| [Image Generation](https://kobra.systems/components/image-generation) | An image is being generated and the wait should show a canvas forming, not a spinner. |
+| [Streaming Text](https://kobra.systems/components/streaming-text) | A model reply arrives token by token and should render smoothly as it streams. |
+| [Inline Citations](https://kobra.systems/components/inline-citations) | An answer draws on sources and each claim must link back to where it came from. |
+| [Code Block](https://kobra.systems/components/code-block) | A reply or doc page shows code that the user will copy or run. |
+| [Task List](https://kobra.systems/components/task-list) | An agent works through several steps and the user should track which are done. |
+| [Chat Input](https://kobra.systems/components/chat-input) | The user prompts an agent and needs a composer with attachments and send. |
+| [Plan Card](https://kobra.systems/components/plan-card) | An agent wants to run a multi-step plan and must get approval first. |
+| [Question Card](https://kobra.systems/components/question-card) | An agent cannot continue until the user answers a question. |
+| [Message](https://kobra.systems/components/message) | An agent chat needs structured user and assistant messages. |
+| [Message Scroller](https://kobra.systems/components/message-scroller) | A long conversation must stick to the bottom while streaming and let the user jump back. |
+| [Table](https://kobra.systems/components/table) | Structured rows and columns are shown without the weight of a data grid. |
+| [CRM Table](https://kobra.systems/components/crm-table) | A sales or account list shows owners, pipeline, and win odds in resizable columns. |
+| [Chart](https://kobra.systems/components/chart) | A dashboard needs line, bar, or area charts that match the rest of the set. |
+| [Item](https://kobra.systems/components/item) | A list or settings page repeats the same row of icon, text, and action. |
+| [Avatar](https://kobra.systems/components/avatar) | A person or team is shown by picture, with a fallback when there is none. |
+| [Badge](https://kobra.systems/components/badge) | A short status or category label sits next to a title or in a table cell. |
+| [Marker](https://kobra.systems/components/marker) | A point on a map, timeline, or list needs a labeled status dot. |
+| [Kbd](https://kobra.systems/components/kbd) | A menu item or tooltip shows the keyboard shortcut for an action. |
+| [Attachment](https://kobra.systems/components/attachment) | A file sent in a chat or form is shown as a compact chip with name and type. |
+| [Lightbox](https://kobra.systems/components/lightbox) | A photo gallery lays images out in justified rows and opens each one full size. |
+| [Alert](https://kobra.systems/components/alert) | A message belongs to one region of the page and must stay visible, unlike a toast. |
+| [Progress](https://kobra.systems/components/progress) | An upload, import, or setup has a known length and the user wants to see how far along it is. |
+| [Spinner](https://kobra.systems/components/spinner) | Work of unknown length is running inside a button or small area. |
+| [Skeleton](https://kobra.systems/components/skeleton) | Content is loading and the layout should hold its shape until it arrives. |
+| [Empty](https://kobra.systems/components/empty) | A list or page has nothing in it yet and should say what to do next. |
+| [Form](https://kobra.systems/components/form) | A form needs validation, error messages, and field layout wired together. |
+| [Input](https://kobra.systems/components/input) | A text field needs its label, hint, and attached buttons or icons as one control. |
+| [Input Dissolve](https://kobra.systems/components/input-dissolve) | A value is used up once submitted, like a sent message or a redeemed code, and the field should visibly let go of it. |
+| [Textarea](https://kobra.systems/components/textarea) | The user writes several lines, such as a comment, description, or note. |
+| [Button](https://kobra.systems/components/button) | Any action trigger, including busy states that keep the label and show a spinner. |
+| [Toggle Group](https://kobra.systems/components/toggle-group) | A toolbar has on/off controls, alone or joined into one bar, like text formatting. |
+| [Checkbox](https://kobra.systems/components/checkbox) | The user picks any number of options, or confirms a single agreement. |
+| [Radio Group](https://kobra.systems/components/radio-group) | The user must pick exactly one option from a short visible list. |
+| [Switch](https://kobra.systems/components/switch) | A setting takes effect immediately, with no save button. |
+| [Slider](https://kobra.systems/components/slider) | A value is tuned by feel along a range, like volume or a threshold. |
+| [Select](https://kobra.systems/components/select) | The user picks one option from a list too long for radios, styled or native on mobile. |
+| [Combobox](https://kobra.systems/components/combobox) | The option list is long enough that the user needs to type to find the right one. |
+| [Multi Select](https://kobra.systems/components/multi-select) | The user picks several values from one list, like tags or assignees, shown as chips. |
+| [Calendar](https://kobra.systems/components/calendar) | The user picks a date or a date range. |
+| [Color Palette](https://kobra.systems/components/color-palette) | The user picks a label or theme color from a fixed set of swatches. |
+| [Color Picker](https://kobra.systems/components/color-picker) | The user needs any color or a gradient with draggable stops and a hex field. |
+| [Magnetic Dropzone](https://kobra.systems/components/magnetic-dropzone) | File upload is a central moment, and the drop target should react as a file is dragged near. |
+| [Card](https://kobra.systems/components/card) | Related content and actions need one bordered surface. |
+| [Accordion](https://kobra.systems/components/accordion) | A page has more content than screen, like an FAQ, and only one section matters at a time. |
+| [Collapsible](https://kobra.systems/components/collapsible) | A single section, like advanced options, hides until the user asks for it. |
+| [Aspect Ratio](https://kobra.systems/components/aspect-ratio) | An image, video, or embed must keep its ratio while the layout resizes. |
+| [Logo Carousel](https://kobra.systems/components/logo-carousel) | A landing page shows customer logos, a few at a time, rotating through the rest. |
+| [Separator](https://kobra.systems/components/separator) | Two groups of content or menu items need a visible divider. |
+| [Scroll Area](https://kobra.systems/components/scroll-area) | A panel or dropdown scrolls on its own and native scrollbars look out of place. |
+| [Resizable](https://kobra.systems/components/resizable) | The user drags a handle to split space between panels, like a sidebar and an editor. |
+| [Direction](https://kobra.systems/components/direction) | The app supports right-to-left languages and components must flip. |
+| [Tabs](https://kobra.systems/components/tabs) | Several views share one space and the user switches between them. |
+| [Breadcrumb](https://kobra.systems/components/breadcrumb) | Pages sit deep in a hierarchy and the user needs the path back up. |
+| [Pagination](https://kobra.systems/components/pagination) | A long list is split into pages and the user moves between them. |
+| [Sidebar](https://kobra.systems/components/sidebar) | The app needs a collapsible main navigation along the side. |
+| [Menubar](https://kobra.systems/components/menubar) | A desktop-style app needs File, Edit, and View menus across the top. |
+| [Dialog](https://kobra.systems/components/dialog) | A focused task or a destructive confirmation must block the page until it is handled. |
+| [Sheet](https://kobra.systems/components/sheet) | Details or a form slide in from the edge while the page stays in context. |
+| [Drawer](https://kobra.systems/components/drawer) | On mobile, a panel slides up from the bottom and can be dragged away. |
+| [Popover](https://kobra.systems/components/popover) | Extra controls or content open next to their trigger without leaving the page. |
+| [Hover Card](https://kobra.systems/components/hover-card) | Hovering a name or link should preview richer details, like a profile. |
+| [Tooltip](https://kobra.systems/components/tooltip) | An icon button or truncated text needs a short label on hover or focus. |
+| [Dropdown Menu](https://kobra.systems/components/dropdown-menu) | Several actions hide behind one trigger, like a row's more menu. |
+| [Context Menu](https://kobra.systems/components/context-menu) | Right-click on an item should offer actions for that item. |
+
+</details>
+
 ### [Magic UI](https://magicui.design/docs)
 
 ![Magic UI](assets/banners/magic-ui.png)
@@ -443,6 +779,59 @@ The broadest catalogue of marketing-grade visual effects here: backgrounds, text
 | [Video Text](https://magicui.design/docs/components/video-text) | Video plays inside the letterforms of a headline, for a bold single-word hero. |
 | [Warp Background](https://magicui.design/docs/components/warp-background) | A section background should warp toward a vanishing point, suggesting speed. |
 | [Word Rotate](https://magicui.design/docs/components/word-rotate) | The headline names several audiences and the last word cycles cleanly between them. |
+
+</details>
+
+### [Motion Primitives](https://motion-primitives.com/docs)
+
+![Motion Primitives](assets/banners/motion-primitives.png)
+
+Small, unopinionated animated primitives built on Motion and Tailwind — a shared motion vocabulary (in-view, transition panel, morphing dialog) rather than finished marketing sections.
+
+**Reach for it when** you are assembling your own components and need the motion layer underneath them: an element that animates on entering view, a panel that morphs between states, a number that counts, a text effect applied per character.
+
+**Reach elsewhere when** you want ready-made landing-page sections ([Magic UI](#magic-ui)), one-off spectacle effects for a hero ([Fancy Components](#fancy-components)), or interaction patterns hardened against layout shift and reduced motion ([interior.dev](#interiordev)).
+
+Several primitives are wrappers, not visuals — `InView`, `AnimatedGroup`, and `Tilt` take your own markup as children, so they compose into existing shadcn components instead of replacing them.
+
+<details>
+<summary><strong>33 components</strong></summary>
+
+| Component | Use when |
+| --- | --- |
+| [Accordion](https://motion-primitives.com/docs/accordion) | Collapsible sections whose open and close should be animated by the same system as the rest of the page. |
+| [Animated Background](https://motion-primitives.com/docs/animated-background) | A highlight should travel between tabs, nav items, or list rows instead of jumping. |
+| [Animated Group](https://motion-primitives.com/docs/animated-group) | A list, grid, or card set should stagger in as one group, without wiring each child. |
+| [Border Trail](https://motion-primitives.com/docs/border-trail) | A card or button needs a light running along its border to mark active or processing state. |
+| [Carousel](https://motion-primitives.com/docs/carousel) | A simple slider where you control the slide markup and only want the motion and gestures handled. |
+| [Cursor](https://motion-primitives.com/docs/cursor) | A custom cursor follows the pointer and changes over specific regions. |
+| [Dialog](https://motion-primitives.com/docs/dialog) | A modal with animated enter and exit that stays composable with your own content. |
+| [Disclosure](https://motion-primitives.com/docs/disclosure) | A single show/hide region animating to auto height — "read more", details panels. |
+| [In View](https://motion-primitives.com/docs/in-view) | Anything should animate the first time it scrolls into the viewport, once or every time. |
+| [Infinite Slider](https://motion-primitives.com/docs/infinite-slider) | A continuous logo or testimonial strip that loops without a visible seam. |
+| [Transition Panel](https://motion-primitives.com/docs/transition-panel) | Switching between steps, tabs, or views should animate the panel rather than swap it. |
+| [Text Effect](https://motion-primitives.com/docs/text-effect) | A headline animates in per character, word, or line, with your own variants. |
+| [Text Loop](https://motion-primitives.com/docs/text-loop) | One line cycles through several phrases — rotating value props or status labels. |
+| [Text Morph](https://motion-primitives.com/docs/text-morph) | One string becomes another and the shared letters should move rather than re-render. |
+| [Text Roll](https://motion-primitives.com/docs/text-roll) | Letters flip on a vertical axis for a hover or reveal with a mechanical feel. |
+| [Text Scramble](https://motion-primitives.com/docs/text-scramble) | Text decodes out of random characters when it appears or on trigger. |
+| [Text Shimmer](https://motion-primitives.com/docs/text-shimmer) | A label needs a subtle sheen to read as loading or as generated output. |
+| [Text Shimmer Wave](https://motion-primitives.com/docs/text-shimmer-wave) | Same shimmer with a wave through the letters, for a stronger streaming or thinking state. |
+| [Animated Number](https://motion-primitives.com/docs/animated-number) | A figure changes and the transition between values carries the meaning. |
+| [Sliding Number](https://motion-primitives.com/docs/sliding-number) | Digits roll like an odometer — counters, timers, live metrics. |
+| [Dock](https://motion-primitives.com/docs/dock) | A macOS-style magnifying dock for a toolbar or app launcher. |
+| [Glow Effect](https://motion-primitives.com/docs/glow-effect) | A card, button, or panel needs an animated glow to mark focus, activity, or a premium tier. |
+| [Image Comparison](https://motion-primitives.com/docs/image-comparison) | Before and after are compared with a draggable slider. |
+| [Scroll Progress](https://motion-primitives.com/docs/scroll-progress) | Long-form content needs a reading progress bar tied to a container or the page. |
+| [Spotlight](https://motion-primitives.com/docs/spotlight) | A light should follow the cursor across a card to make a flat surface feel lit. |
+| [Spinning Text](https://motion-primitives.com/docs/spinning-text) | Copy rotates around a circle — badges, seals, scroll cues. |
+| [Tilt](https://motion-primitives.com/docs/tilt) | A card should tilt in 3D toward the pointer, wrapping content you already have. |
+| [Toolbar Dynamic](https://motion-primitives.com/docs/toolbar-dynamic) | A toolbar changes its contents based on selection and the change should animate in place. |
+| [Toolbar Expandable](https://motion-primitives.com/docs/toolbar-expandable) | A compact bar expands into a panel of controls — the Dynamic Island pattern. |
+| [Magnetic](https://motion-primitives.com/docs/magnetic) | A button or link is pulled toward the cursor as it approaches, making targets feel eager. |
+| [Morphing Dialog](https://motion-primitives.com/docs/morphing-dialog) | A card should grow into its detail view from where it sits, keeping the visitor's place. |
+| [Morphing Popover](https://motion-primitives.com/docs/morphing-popover) | A trigger expands into a popover or composer rather than a popover appearing beside it. |
+| [Progressive Blur](https://motion-primitives.com/docs/progressive-blur) | Content should fade under a gradient blur at the edge of a scroll area or over an image. |
 
 </details>
 

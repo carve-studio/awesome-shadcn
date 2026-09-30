@@ -1,0 +1,32 @@
+services:
+  storybook:
+    build: .
+    environment:
+      PUBLIC_MCP: "1"
+      NODE_OPTIONS: --max-old-space-size=4096
+    expose:
+      - "6006"
+    healthcheck:
+      # Probe /index.json, never /mcp: a GET there opens an SSE stream that
+      # never closes, so a /mcp healthcheck hangs until timeout every time.
+      # oven/bun has no curl, hence bun fetch.
+      test: ["CMD-SHELL", "bun -e 'const r = await fetch(\"http://localhost:6006/index.json\"); process.exit(r.ok ? 0 : 1)'"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 300s
+    restart: unless-stopped
+
+  proxy:
+    image: nginx:alpine
+    depends_on:
+      storybook:
+        condition: service_healthy
+    environment:
+      STORYBOOK_PORT: "6006"
+      PUBLIC_ORIGIN: ${PUBLIC_ORIGIN:-https://storybook.example.com}
+    volumes:
+      - ./nginx.conf.template:/etc/nginx/templates/default.conf.template:ro
+    ports:
+      - "8080:8080"
+    restart: unless-stopped
